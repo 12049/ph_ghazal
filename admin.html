@@ -61,126 +61,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== شاشة تسجيل الدخول ===== */
-        .login-overlay {
-            position: fixed;
-            inset: 0;
-            background: var(--bg);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .login-overlay.hidden {
-            display: none;
-        }
-
-        .login-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 40px 32px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 80px var(--primary-glow);
-        }
-
-        .login-box .login-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            margin: 0 auto 16px;
-            overflow: hidden;
-        }
-
-        .login-box .login-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .login-box h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--text), var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .login-box p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin: 4px 0 20px;
-        }
-
-        .login-box .form-group {
-            margin-bottom: 16px;
-            text-align: right;
-        }
-
-        .login-box .form-group label {
-            display: block;
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-        }
-
-        .login-box .form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(10, 10, 15, 0.3);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text);
-            transition: var(--transition);
-        }
-
-        .login-box .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px var(--primary-glow);
-        }
-
-        .login-box .btn-login {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border: none;
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 12px 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Tajawal', sans-serif;
-            width: 100%;
-            box-shadow: 0 4px 20px var(--primary-glow);
-        }
-
-        .login-box .btn-login:active {
-            transform: scale(0.97);
-        }
-
-        .login-box .login-error {
-            color: #f44336;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .login-box .login-error.show {
-            display: block;
-        }
-
         /* ===== القائمة الجانبية ===== */
         .sidebar {
             position: fixed;
@@ -313,29 +193,6 @@
             color: var(--text);
         }
 
-        .sidebar .sidebar-footer .logout-btn {
-            background: rgba(244, 67, 54, 0.1);
-            border: 1px solid rgba(244, 67, 54, 0.2);
-            color: #f44336;
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Tajawal', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-        }
-
-        .sidebar .sidebar-footer .logout-btn:hover {
-            background: rgba(244, 67, 54, 0.2);
-            border-color: #f44336;
-        }
-
         /* ===== المحتوى الرئيسي ===== */
         .main-content {
             margin-right: var(--sidebar-width);
@@ -403,13 +260,11 @@
             border-radius: var(--radius);
             padding: 20px 18px;
             transition: var(--transition);
-            cursor: default;
         }
 
         .stat-card:hover {
             border-color: var(--primary);
             box-shadow: 0 0 30px var(--primary-glow);
-            transform: translateY(-2px);
         }
 
         .stat-card .stat-icon {
@@ -837,10 +692,6 @@
             .stat-card .stat-number {
                 font-size: 1.4rem;
             }
-
-            .login-box {
-                padding: 28px 20px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -890,25 +741,6 @@
 </head>
 <body>
 
-    <!-- ===== شاشة تسجيل الدخول ===== -->
-    <div class="login-overlay" id="loginOverlay">
-        <div class="login-box">
-            <div class="login-logo">
-                <img src="images/avatar1.png" alt="Ghazal"/>
-            </div>
-            <h2>Ghazal</h2>
-            <p>لوحة التحكم - أدخل كلمة المرور</p>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> كلمة المرور</label>
-                <input type="password" id="loginPassword" placeholder="أدخل كلمة مرور الأدمن" />
-            </div>
-            <button class="btn-login" onclick="handleLogin()">
-                <i class="fas fa-sign-in-alt"></i> دخول
-            </button>
-            <div class="login-error" id="loginError">❌ كلمة المرور غير صحيحة</div>
-        </div>
-    </div>
-
     <!-- ===== القائمة الجانبية ===== -->
     <aside class="sidebar" id="sidebar">
         <div class="logo">
@@ -929,9 +761,6 @@
             <button class="theme-btn" id="themeToggle">
                 <i class="fas fa-palette"></i> تغيير الثيم
             </button>
-            <button class="logout-btn" onclick="handleLogout()">
-                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
-            </button>
             <a href="../index.html" style="text-align:center;color:var(--text-secondary);font-size:0.8rem;text-decoration:none;padding:8px;">
                 <i class="fas fa-arrow-left"></i> العودة للموقع
             </a>
@@ -939,7 +768,7 @@
     </aside>
 
     <!-- ===== المحتوى الرئيسي ===== -->
-    <main class="main-content" id="mainContent" style="display:none;">
+    <main class="main-content">
 
         <!-- ===== الهيدر ===== -->
         <header class="header">
@@ -1054,7 +883,6 @@
                         <thead>
                             <tr>
                                 <th>العميل</th>
-                                <th>الهاتف</th>
                                 <th>نوع الخدمة</th>
                                 <th>التاريخ</th>
                                 <th>الموقع</th>
@@ -1064,7 +892,7 @@
                             </tr>
                         </thead>
                         <tbody id="bookingsTableBody">
-                            <tr><td colspan="8"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
+                            <tr><td colspan="7"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1089,45 +917,9 @@
     </div>
 
     <script>
-        // ===== كلمة مرور الأدمن =====
-        const ADMIN_PASSWORD = 'zebakghazal08@';
-
         // ===== API Base URL =====
         const API_BASE = 'https://api-dataflowx.vercel.app/api/v1/arege/ph-ghazal';
-
-        // ===== تسجيل الدخول =====
-        function handleLogin() {
-            const password = document.getElementById('loginPassword').value;
-            const error = document.getElementById('loginError');
-
-            if (password === ADMIN_PASSWORD) {
-                document.getElementById('loginOverlay').classList.add('hidden');
-                document.getElementById('mainContent').style.display = 'block';
-                loadAllData();
-                error.classList.remove('show');
-            } else {
-                error.classList.add('show');
-                setTimeout(() => {
-                    error.classList.remove('show');
-                }, 3000);
-            }
-        }
-
-        // ===== تسجيل الخروج =====
-        function handleLogout() {
-            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
-                document.getElementById('loginOverlay').classList.remove('hidden');
-                document.getElementById('mainContent').style.display = 'none';
-                document.getElementById('loginPassword').value = '';
-            }
-        }
-
-        // ===== الضغط على Enter في حقل كلمة المرور =====
-        document.getElementById('loginPassword').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                handleLogin();
-            }
-        });
+        const ADMIN_PASSWORD = 'zebakghazal08@';
 
         // ===== بيانات وهمية =====
         let allComments = [];
@@ -1230,6 +1022,7 @@
             if (data && data.status && data.comments) {
                 allComments = data.comments;
             } else {
+                // بيانات وهمية
                 allComments = [
                     { id: '1', name: 'أحمد السالم', rating: 5, comment: 'خدمة رائعة جداً، أنصح الجميع بغزل!', status: 'approved', createdAt: new Date().toISOString() },
                     { id: '2', name: 'سارة الخالد', rating: 4, comment: 'تصوير جميل واحترافي، شكراً غزل.', status: 'pending', createdAt: new Date(Date.now() - 86400000).toISOString() },
@@ -1297,6 +1090,7 @@
                 loadComments();
                 loadStats();
             } else {
+                // محاكاة محلية
                 const comment = allComments.find(c => c.id === id);
                 if (comment) {
                     comment.status = 'approved';
@@ -1374,7 +1168,7 @@
         function renderBookings(bookings) {
             const tbody = document.getElementById('bookingsTableBody');
             if (!bookings || bookings.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات</div></td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات</div></td></tr>`;
                 return;
             }
 
@@ -1391,7 +1185,6 @@
                 return `
                     <tr>
                         <td>${b.name || b.username || b.userFullName || '—'}</td>
-                        <td>${b.phone || b.userPhone || '—'}</td>
                         <td>${b.sessionType || '—'}</td>
                         <td>${date}</td>
                         <td>${b.location || '—'}</td>
@@ -1452,7 +1245,6 @@
                 filtered = filtered.filter(b =>
                     (b.name || '').toLowerCase().includes(search) ||
                     (b.username || '').toLowerCase().includes(search) ||
-                    (b.phone || '').includes(search) ||
                     (b.sessionType || '').toLowerCase().includes(search) ||
                     (b.location || '').toLowerCase().includes(search)
                 );
@@ -1513,7 +1305,6 @@
             if (!booking) return;
             document.getElementById('detailsContent').innerHTML = `
                 <div style="margin-bottom:12px;"><strong>العميل:</strong> ${booking.name || booking.username || booking.userFullName || '—'}</div>
-                <div style="margin-bottom:12px;"><strong>الهاتف:</strong> ${booking.phone || booking.userPhone || '—'}</div>
                 <div style="margin-bottom:12px;"><strong>نوع الخدمة:</strong> ${booking.sessionType || '—'}</div>
                 <div style="margin-bottom:12px;"><strong>التاريخ:</strong> ${booking.date || '—'}</div>
                 <div style="margin-bottom:12px;"><strong>الموقع:</strong> ${booking.location || '—'}</div>
@@ -1556,8 +1347,12 @@
             showToast('✅ تم تحديث البيانات بنجاح', 'success');
         }
 
-        // ===== تحميل أولي (يتم بعد تسجيل الدخول) =====
-        // تم نقله إلى handleLogin
+        // ===== تحميل أولي =====
+        loadAllData();
+
+        setInterval(() => {
+            loadStats();
+        }, 30000);
     </script>
 </body>
 </html>
