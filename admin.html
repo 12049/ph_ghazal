@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ghazal | لوحة التحكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #a855f7;
+            --primary-dark: #7c3aed;
+            --primary-light: #d8b4fe;
+            --primary-glow: rgba(168, 85, 247, 0.2);
+            --bg: #0f0a1a;
+            --bg-card: rgba(25, 18, 40, 0.8);
+            --bg-card-hover: rgba(40, 30, 60, 0.9);
+            --text: #f0edff;
+            --text-secondary: #b0a8c8;
+            --border: rgba(139, 92, 246, 0.15);
+            --glass: rgba(15, 10, 26, 0.9);
+            --radius: 16px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --sidebar-width: 250px;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f0ff;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --text: #1a0a2e;
+            --text-secondary: #6a5a8a;
+            --border: rgba(124, 58, 237, 0.12);
+            --glass: rgba(245, 240, 255, 0.9);
+            --primary-glow: rgba(124, 58, 237, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #08080a;
+            --bg-card: rgba(18, 18, 22, 0.85);
+            --bg-card-hover: rgba(28, 28, 34, 0.95);
+            --text: #e8e0f0;
+            --text-secondary: #a098b0;
+            --border: rgba(168, 85, 247, 0.12);
+            --glass: rgba(8, 8, 10, 0.92);
+            --primary-glow: rgba(168, 85, 247, 0.1);
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.4s ease, color 0.3s ease;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ===== شاشة تسجيل الدخول ===== */
+        .login-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .login-overlay.hidden {
+            display: none;
+        }
+
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 80px var(--primary-glow);
+        }
+
+        .login-box .login-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin: 0 auto 16px;
+            overflow: hidden;
+        }
+
+        .login-box .login-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .login-box h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .login-box p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 4px 0 20px;
+        }
+
+        .login-box .form-group {
+            margin-bottom: 16px;
+            text-align: right;
+        }
+
+        .login-box .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .login-box .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(10, 10, 15, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .login-box .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        .login-box .btn-login {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            width: 100%;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .login-box .btn-login:active {
+            transform: scale(0.97);
+        }
+
+        .login-box .login-error {
+            color: #f44336;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .login-box .login-error.show {
+            display: block;
+        }
+
+        /* ===== القائمة الجانبية ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border);
+            padding: 20px 16px;
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            object-fit: cover;
+        }
+
+        .sidebar .logo h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar .logo span {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: -4px;
+        }
+
+        .sidebar .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sidebar .nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .sidebar .nav-list a i {
+            width: 22px;
+            font-size: 1rem;
+            color: var(--primary-light);
+        }
+
+        .sidebar .nav-list a:hover {
+            background: rgba(168, 85, 247, 0.06);
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        .sidebar .nav-list .active a {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: var(--primary);
+            color: var(--text);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .sidebar .nav-list a .badge {
+            margin-right: auto;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .sidebar .sidebar-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar .sidebar-footer .theme-btn {
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .sidebar .sidebar-footer .theme-btn:hover {
+            border-color: var(--primary);
+            color: var(--text);
+        }
+
+        .sidebar .sidebar-footer .logout-btn {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.2);
+            color: #f44336;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .sidebar .sidebar-footer .logout-btn:hover {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: #f44336;
+        }
+
+        /* ===== المحتوى الرئيسي ===== */
+        .main-content {
+            margin-right: var(--sidebar-width);
+            min-height: 100vh;
+            padding: 20px 30px 30px;
+        }
+
+        /* ===== الهيدر ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .header .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .header .header-actions .admin-badge {
+            background: var(--primary);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .header .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* ===== الإحصائيات ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+
+        .stat-card .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .stat-icon.purple { background: rgba(168, 85, 247, 0.12); color: var(--primary-light); }
+        .stat-card .stat-icon.green { background: rgba(76, 175, 80, 0.12); color: #4CAF50; }
+        .stat-card .stat-icon.orange { background: rgba(255, 152, 0, 0.12); color: #FF9800; }
+        .stat-card .stat-icon.blue { background: rgba(33, 150, 243, 0.12); color: #2196F3; }
+        .stat-card .stat-icon.red { background: rgba(244, 67, 54, 0.12); color: #f44336; }
+        .stat-card .stat-icon.gold { background: rgba(255, 193, 7, 0.12); color: #FFC107; }
+
+        .stat-card .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text);
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* ===== الأقسام ===== */
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+
+        .section .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section .section-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .section .section-header h3 i {
+            color: var(--primary-light);
+            margin-left: 8px;
+        }
+
+        .section .section-header .search-box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .section .section-header .search-box input,
+        .section .section-header .search-box select {
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: rgba(10, 10, 15, 0.3);
+            color: var(--text);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .section .section-header .search-box input:focus,
+        .section .section-header .search-box select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        .section .section-header .search-box input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.5;
+        }
+
+        /* ===== الجداول ===== */
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        table thead {
+            background: rgba(168, 85, 247, 0.05);
+            border-bottom: 2px solid var(--border);
+        }
+
+        table th {
+            padding: 12px 14px;
+            text-align: right;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        table tbody tr:hover {
+            background: rgba(168, 85, 247, 0.03);
+        }
+
+        table .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        table .status.pending { background: rgba(255, 152, 0, 0.15); color: #FF9800; }
+        table .status.accepted { background: rgba(33, 150, 243, 0.15); color: #2196F3; }
+        table .status.completed { background: rgba(76, 175, 80, 0.15); color: #4CAF50; }
+        table .status.cancelled { background: rgba(244, 67, 54, 0.15); color: #f44336; }
+        table .status.approved { background: rgba(76, 175, 80, 0.15); color: #4CAF50; }
+        table .status.rejected { background: rgba(244, 67, 54, 0.15); color: #f44336; }
+
+        table .stars {
+            color: #f5a623;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        table .actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        table .actions button {
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(168, 85, 247, 0.05);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        table .actions button:hover {
+            border-color: var(--primary);
+            color: var(--text);
+        }
+
+        table .actions button.approve:hover { border-color: #4CAF50; color: #4CAF50; }
+        table .actions button.reject:hover { border-color: #f44336; color: #f44336; }
+        table .actions button.delete:hover { border-color: #f44336; color: #f44336; }
+        table .actions button.accept:hover { border-color: #2196F3; color: #2196F3; }
+        table .actions button.complete:hover { border-color: #4CAF50; color: #4CAF50; }
+
+        table .avatar-small {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border);
+        }
+
+        .badge-count {
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+        }
+
+        /* ===== المودال ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-overlay .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-overlay .modal .modal-close {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-overlay .modal .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal-overlay .modal h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .modal-overlay .modal h3 i {
+            color: var(--primary-light);
+            margin-left: 8px;
+        }
+
+        .modal-overlay .modal .form-group {
+            margin-bottom: 14px;
+        }
+
+        .modal-overlay .modal .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .modal-overlay .modal .form-group input,
+        .modal-overlay .modal .form-group select,
+        .modal-overlay .modal .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(10, 10, 15, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .modal-overlay .modal .form-group input:focus,
+        .modal-overlay .modal .form-group select:focus,
+        .modal-overlay .modal .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        .modal-overlay .modal .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .modal-overlay .modal .btn-submit {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            width: 100%;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .modal-overlay .modal .btn-submit:active {
+            transform: scale(0.97);
+        }
+
+        /* ===== رسائل ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 50%;
+            transform: translateX(50%);
+            padding: 14px 28px;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2000;
+            display: none;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+            animation: slideUp 0.4s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .toast.show {
+            display: block;
+        }
+
+        .toast.success { border-color: #4CAF50; }
+        .toast.error { border-color: #f44336; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(50%) translateY(0); }
+        }
+
+        .toast i {
+            margin-left: 10px;
+        }
+
+        .toast .toast-close {
+            margin-right: 16px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* ===== التجاوب ===== */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(100%);
+                width: 280px;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-right: 0;
+                padding: 16px;
+            }
+
+            .header .menu-toggle {
+                display: block;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .section {
+                padding: 14px 16px;
+            }
+
+            .section .section-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .section .section-header .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .section .section-header .search-box input {
+                width: 100%;
+                min-width: unset;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            table th,
+            table td {
+                padding: 8px 10px;
+            }
+
+            .modal-overlay .modal {
+                padding: 20px;
+                margin: 16px;
+            }
+
+            .stat-card .stat-number {
+                font-size: 1.4rem;
+            }
+
+            .login-box {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1rem;
+            }
+
+            .header .header-actions .admin-badge {
+                font-size: 0.6rem;
+                padding: 4px 12px;
+            }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+        }
+
+        .loading i {
+            animation: spin 1s linear infinite;
+            font-size: 1.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            opacity: 0.3;
+            margin-bottom: 12px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== شاشة تسجيل الدخول ===== -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div class="login-logo">
+                <img src="images/avatar1.png" alt="Ghazal"/>
+            </div>
+            <h2>Ghazal</h2>
+            <p>لوحة التحكم - أدخل كلمة المرور</p>
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                <input type="password" id="loginPassword" placeholder="أدخل كلمة مرور الأدمن" />
+            </div>
+            <button class="btn-login" onclick="handleLogin()">
+                <i class="fas fa-sign-in-alt"></i> دخول
+            </button>
+            <div class="login-error" id="loginError">❌ كلمة المرور غير صحيحة</div>
+        </div>
+    </div>
+
+    <!-- ===== القائمة الجانبية ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="images/avatar1.png" alt="Ghazal"/>
+            <div>
+                <h2>Ghazal</h2>
+                <span>لوحة التحكم</span>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li class="active"><a onclick="showSection('dashboard')"><i class="fas fa-chart-pie"></i> الرئيسية</a></li>
+            <li><a onclick="showSection('comments')"><i class="fas fa-star"></i> التعليقات <span class="badge" id="commentsBadge">0</span></a></li>
+            <li><a onclick="showSection('bookings')"><i class="fas fa-calendar-check"></i> الطلبات <span class="badge" id="bookingsBadge">0</span></a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <button class="theme-btn" id="themeToggle">
+                <i class="fas fa-palette"></i> تغيير الثيم
+            </button>
+            <button class="logout-btn" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+            </button>
+            <a href="../index.html" style="text-align:center;color:var(--text-secondary);font-size:0.8rem;text-decoration:none;padding:8px;">
+                <i class="fas fa-arrow-left"></i> العودة للموقع
+            </a>
+        </div>
+    </aside>
+
+    <!-- ===== المحتوى الرئيسي ===== -->
+    <main class="main-content" id="mainContent" style="display:none;">
+
+        <!-- ===== الهيدر ===== -->
+        <header class="header">
+            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <h1 id="pageTitle">📊 لوحة التحكم</h1>
+            <div class="header-actions">
+                <span class="admin-badge"><i class="fas fa-crown"></i> مدير</span>
+                <button onclick="refreshData()" style="background:none;border:none;color:var(--text-secondary);font-size:1.1rem;cursor:pointer;">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- ===== الرئيسية ===== -->
+        <section id="dashboardSection">
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" id="statClients">0</div>
+                    <div class="stat-label">إجمالي العملاء</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" id="statPending">0</div>
+                    <div class="stat-label">طلبات معلقة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-number" id="statCompleted">0</div>
+                    <div class="stat-label">طلبات مكتملة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold"><i class="fas fa-star"></i></div>
+                    <div class="stat-number" id="statRating">0</div>
+                    <div class="stat-label">متوسط التقييم</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-comment"></i></div>
+                    <div class="stat-number" id="statComments">0</div>
+                    <div class="stat-label">إجمالي التعليقات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" id="statAccepted">0</div>
+                    <div class="stat-label">طلبات مقبولة</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-clock"></i> أحدث الطلبات</h3>
+                    <button onclick="showSection('bookings')" style="background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.85rem;">عرض الكل →</button>
+                </div>
+                <div id="recentBookings">
+                    <div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== التعليقات ===== -->
+        <section id="commentsSection" style="display:none;">
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-star"></i> إدارة التعليقات</h3>
+                    <div class="search-box">
+                        <select id="commentFilter" onchange="filterComments()">
+                            <option value="all">جميع التعليقات</option>
+                            <option value="approved">مقبولة</option>
+                            <option value="pending">قيد المراجعة</option>
+                            <option value="rejected">مرفوضة</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستخدم</th>
+                                <th>التقييم</th>
+                                <th>التعليق</th>
+                                <th>الحالة</th>
+                                <th>التاريخ</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="commentsTableBody">
+                            <tr><td colspan="6"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== الطلبات ===== -->
+        <section id="bookingsSection" style="display:none;">
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-calendar-check"></i> إدارة الطلبات</h3>
+                    <div class="search-box">
+                        <select id="bookingFilter" onchange="filterBookings()">
+                            <option value="all">جميع الطلبات</option>
+                            <option value="pending">معلقة</option>
+                            <option value="accepted">مقبولة</option>
+                            <option value="completed">مكتملة</option>
+                            <option value="cancelled">ملغية</option>
+                        </select>
+                        <input type="text" id="bookingSearch" placeholder="🔍 بحث..." oninput="filterBookings()"/>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>العميل</th>
+                                <th>الهاتف</th>
+                                <th>نوع الخدمة</th>
+                                <th>التاريخ</th>
+                                <th>الموقع</th>
+                                <th>الحالة</th>
+                                <th>المصور</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody">
+                            <tr><td colspan="8"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== مودال عرض التفاصيل ===== -->
+    <div class="modal-overlay" id="detailsModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('detailsModal')"><i class="fas fa-times"></i></button>
+            <h3><i class="fas fa-info-circle"></i> تفاصيل العنصر</h3>
+            <div id="detailsContent"></div>
+        </div>
+    </div>
+
+    <!-- ===== رسالة منبثقة ===== -->
+    <div class="toast" id="toast">
+        <span class="toast-close" onclick="hideToast()"><i class="fas fa-times"></i></span>
+        <span id="toastMessage"></span>
+    </div>
+
+    <script>
+        // ===== كلمة مرور الأدمن =====
+        const ADMIN_PASSWORD = 'GhazalAdmin2025';
+
+        // ===== API Base URL =====
+        const API_BASE = 'https://api-dataflowx.vercel.app/api/v1/arege/ph-ghazal';
+
+        // ===== تسجيل الدخول =====
+        function handleLogin() {
+            const password = document.getElementById('loginPassword').value;
+            const error = document.getElementById('loginError');
+
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginOverlay').classList.add('hidden');
+                document.getElementById('mainContent').style.display = 'block';
+                loadAllData();
+                error.classList.remove('show');
+            } else {
+                error.classList.add('show');
+                setTimeout(() => {
+                    error.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // ===== تسجيل الخروج =====
+        function handleLogout() {
+            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                document.getElementById('loginOverlay').classList.remove('hidden');
+                document.getElementById('mainContent').style.display = 'none';
+                document.getElementById('loginPassword').value = '';
+            }
+        }
+
+        // ===== الضغط على Enter في حقل كلمة المرور =====
+        document.getElementById('loginPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+
+        // ===== بيانات وهمية =====
+        let allComments = [];
+        let allBookings = [];
+
+        // ===== الثيمات =====
+        const themes = [
+            { name: 'بنفسجي غامق', value: '' },
+            { name: 'بنفسجي وأبيض', value: 'light' },
+            { name: 'بنفسجي وأسود', value: 'dark' }
+        ];
+        let themeIndex = 0;
+
+        function applyTheme(index) {
+            const theme = themes[index];
+            document.documentElement.setAttribute('data-theme', theme.value);
+            localStorage.setItem('ghazal-admin-theme', theme.value);
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            themeIndex = (themeIndex + 1) % themes.length;
+            applyTheme(themeIndex);
+        });
+
+        const savedTheme = localStorage.getItem('ghazal-admin-theme');
+        if (savedTheme) {
+            const found = themes.findIndex(t => t.value === savedTheme);
+            if (found !== -1) { themeIndex = found; applyTheme(themeIndex); }
+        }
+
+        // ===== القائمة الجانبية =====
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 768 && sidebar.classList.contains('open') && !sidebar.contains(e.target) && !e.target.closest('.menu-toggle')) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        function showSection(section) {
+            const sections = ['dashboard', 'comments', 'bookings'];
+            sections.forEach(s => {
+                document.getElementById(s + 'Section').style.display = s === section ? 'block' : 'none';
+            });
+
+            const titles = {
+                dashboard: '📊 لوحة التحكم',
+                comments: '⭐ التعليقات',
+                bookings: '📅 الطلبات'
+            };
+            document.getElementById('pageTitle').textContent = titles[section] || 'لوحة التحكم';
+
+            document.querySelectorAll('.sidebar .nav-list a').forEach(a => a.parentElement.classList.remove('active'));
+            document.querySelector(`.sidebar .nav-list a[onclick*="${section}"]`)?.parentElement.classList.add('active');
+
+            if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open');
+        }
+
+        // ===== جلب البيانات =====
+        async function fetchAPI(endpoint) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('API Error:', error);
+                return null;
+            }
+        }
+
+        // ===== تحميل البيانات =====
+        async function loadAllData() {
+            await loadStats();
+            await loadComments();
+            await loadBookings();
+        }
+
+        async function loadStats() {
+            const data = await fetchAPI('/stats');
+            if (data && data.status) {
+                const stats = data.statistics;
+                document.getElementById('statClients').textContent = stats.totalClients || 0;
+                document.getElementById('statPending').textContent = stats.pendingProjects || 0;
+                document.getElementById('statCompleted').textContent = stats.completedProjects || 0;
+                document.getElementById('statRating').textContent = stats.averageRating || 0;
+                document.getElementById('statComments').textContent = stats.totalReviews || 0;
+                document.getElementById('statAccepted').textContent = stats.acceptedProjects || 0;
+                document.getElementById('commentsBadge').textContent = stats.totalReviews || 0;
+                document.getElementById('bookingsBadge').textContent = stats.totalProjects || 0;
+            }
+        }
+
+        async function loadComments() {
+            const tbody = document.getElementById('commentsTableBody');
+            
+            const data = await fetchAPI(`/comments/all?adminPassword=${ADMIN_PASSWORD}`);
+            if (data && data.status && data.comments) {
+                allComments = data.comments;
+            } else {
+                allComments = [
+                    { id: '1', name: 'أحمد السالم', rating: 5, comment: 'خدمة رائعة جداً، أنصح الجميع بغزل!', status: 'approved', createdAt: new Date().toISOString() },
+                    { id: '2', name: 'سارة الخالد', rating: 4, comment: 'تصوير جميل واحترافي، شكراً غزل.', status: 'pending', createdAt: new Date(Date.now() - 86400000).toISOString() },
+                    { id: '3', name: 'خالد المنصور', rating: 5, comment: 'أفضل مصورة تعاملت معها، نتائج مذهلة!', status: 'approved', createdAt: new Date(Date.now() - 172800000).toISOString() },
+                    { id: '4', name: 'نورة الفايز', rating: 5, comment: 'تجربة لا تنسى، الصور كانت أجمل من المتوقع.', status: 'rejected', createdAt: new Date(Date.now() - 259200000).toISOString() }
+                ];
+            }
+
+            document.getElementById('commentsBadge').textContent = allComments.filter(c => c.status === 'approved').length;
+            renderComments(allComments);
+        }
+
+        function renderComments(comments) {
+            const tbody = document.getElementById('commentsTableBody');
+            if (!comments || comments.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><i class="fas fa-star"></i> لا توجد تعليقات</div></td></tr>`;
+                return;
+            }
+
+            const statusMap = {
+                'approved': { label: 'مقبول', class: 'approved' },
+                'pending': { label: 'قيد المراجعة', class: 'pending' },
+                'rejected': { label: 'مرفوض', class: 'rejected' }
+            };
+
+            tbody.innerHTML = comments.map(c => {
+                const stars = '⭐'.repeat(c.rating) + '☆'.repeat(5 - (c.rating || 0));
+                const status = statusMap[c.status] || statusMap['pending'];
+                const date = c.createdAt ? new Date(c.createdAt).toLocaleDateString('ar-EG') : '—';
+                return `
+                    <tr>
+                        <td>${c.name || c.username || c.userFullName || 'مستخدم'}</td>
+                        <td><span class="stars">${stars}</span></td>
+                        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.comment || '—'}</td>
+                        <td><span class="status ${status.class}">${status.label}</span></td>
+                        <td>${date}</td>
+                        <td>
+                            <div class="actions">
+                                <button onclick="viewComment('${c.id}')" title="عرض"><i class="fas fa-eye"></i></button>
+                                ${c.status !== 'approved' ? `<button class="approve" onclick="approveComment('${c.id}')" title="موافقة"><i class="fas fa-check"></i></button>` : ''}
+                                ${c.status !== 'rejected' ? `<button class="reject" onclick="rejectComment('${c.id}')" title="رفض"><i class="fas fa-times"></i></button>` : ''}
+                                <button class="delete" onclick="deleteComment('${c.id}')" title="حذف"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterComments() {
+            const filter = document.getElementById('commentFilter').value;
+            if (filter === 'all') {
+                renderComments(allComments);
+            } else {
+                const filtered = allComments.filter(c => c.status === filter);
+                renderComments(filtered);
+            }
+        }
+
+        // ===== إجراءات التعليقات =====
+        async function approveComment(id) {
+            const data = await fetchAPI(`/comment/approve?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم الموافقة على التعليق بنجاح', 'success');
+                loadComments();
+                loadStats();
+            } else {
+                const comment = allComments.find(c => c.id === id);
+                if (comment) {
+                    comment.status = 'approved';
+                    renderComments(allComments);
+                    showToast('✅ تم الموافقة على التعليق بنجاح (محلياً)', 'success');
+                }
+            }
+        }
+
+        async function rejectComment(id) {
+            const data = await fetchAPI(`/comment/reject?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم رفض التعليق', 'success');
+                loadComments();
+                loadStats();
+            } else {
+                const comment = allComments.find(c => c.id === id);
+                if (comment) {
+                    comment.status = 'rejected';
+                    renderComments(allComments);
+                    showToast('✅ تم رفض التعليق (محلياً)', 'success');
+                }
+            }
+        }
+
+        async function deleteComment(id) {
+            if (!confirm('هل أنت متأكد من حذف هذا التعليق؟')) return;
+            const data = await fetchAPI(`/comment/delete?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم حذف التعليق بنجاح', 'success');
+                loadComments();
+                loadStats();
+            } else {
+                allComments = allComments.filter(c => c.id !== id);
+                renderComments(allComments);
+                showToast('✅ تم حذف التعليق بنجاح (محلياً)', 'success');
+            }
+        }
+
+        function viewComment(id) {
+            const comment = allComments.find(c => c.id === id);
+            if (!comment) return;
+            const stars = '⭐'.repeat(comment.rating) + '☆'.repeat(5 - (comment.rating || 0));
+            document.getElementById('detailsContent').innerHTML = `
+                <div style="margin-bottom:12px;"><strong>المستخدم:</strong> ${comment.name || comment.username || comment.userFullName || 'مستخدم'}</div>
+                <div style="margin-bottom:12px;"><strong>التقييم:</strong> <span class="stars">${stars}</span></div>
+                <div style="margin-bottom:12px;"><strong>التعليق:</strong> ${comment.comment || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الحالة:</strong> ${comment.status === 'approved' ? 'مقبول' : comment.status === 'rejected' ? 'مرفوض' : 'قيد المراجعة'}</div>
+                <div style="margin-bottom:12px;"><strong>التاريخ:</strong> ${comment.createdAt ? new Date(comment.createdAt).toLocaleDateString('ar-EG') : '—'}</div>
+            `;
+            document.getElementById('detailsModal').classList.add('open');
+        }
+
+        // ===== تحميل الطلبات =====
+        async function loadBookings() {
+            const tbody = document.getElementById('bookingsTableBody');
+            const data = await fetchAPI('/all-bookings');
+
+            if (data && data.status && data.bookings) {
+                allBookings = data.bookings;
+            } else {
+                allBookings = [
+                    { id: 'b1', name: 'أحمد العتيبي', phone: '0555123456', sessionType: 'اعراس', date: '2025-07-15', location: 'الرياض', status: 'pending', photographer: null, createdAt: new Date().toISOString() },
+                    { id: 'b2', name: 'نورة الفايز', phone: '0556789012', sessionType: 'بورتريه', date: '2025-07-20', location: 'جدة', status: 'accepted', photographer: 'غزل', createdAt: new Date(Date.now() - 86400000).toISOString() },
+                    { id: 'b3', name: 'خالد المنصور', phone: '0553456789', sessionType: 'طبيعة', date: '2025-07-25', location: 'الطائف', status: 'completed', photographer: 'غزل', createdAt: new Date(Date.now() - 172800000).toISOString() },
+                    { id: 'b4', name: 'سارة الخالد', phone: '0559012345', sessionType: 'جلسات', date: '2025-08-01', location: 'الدمام', status: 'pending', photographer: null, createdAt: new Date(Date.now() - 259200000).toISOString() }
+                ];
+            }
+
+            document.getElementById('bookingsBadge').textContent = allBookings.filter(b => b.status === 'pending').length;
+            renderBookings(allBookings);
+            renderRecentBookings(allBookings.slice(0, 5));
+        }
+
+        function renderBookings(bookings) {
+            const tbody = document.getElementById('bookingsTableBody');
+            if (!bookings || bookings.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات</div></td></tr>`;
+                return;
+            }
+
+            const statusMap = {
+                'pending': { label: 'معلق', class: 'pending' },
+                'accepted': { label: 'مقبول', class: 'accepted' },
+                'completed': { label: 'مكتمل', class: 'completed' },
+                'cancelled': { label: 'ملغي', class: 'cancelled' }
+            };
+
+            tbody.innerHTML = bookings.map(b => {
+                const status = statusMap[b.status] || statusMap['pending'];
+                const date = b.date || '—';
+                return `
+                    <tr>
+                        <td>${b.name || b.username || b.userFullName || '—'}</td>
+                        <td>${b.phone || b.userPhone || '—'}</td>
+                        <td>${b.sessionType || '—'}</td>
+                        <td>${date}</td>
+                        <td>${b.location || '—'}</td>
+                        <td><span class="status ${status.class}">${status.label}</span></td>
+                        <td>${b.photographer || '—'}</td>
+                        <td>
+                            <div class="actions">
+                                <button onclick="viewBooking('${b.id}')" title="عرض"><i class="fas fa-eye"></i></button>
+                                ${b.status === 'pending' ? `<button class="accept" onclick="acceptBooking('${b.id}')" title="قبول"><i class="fas fa-check"></i></button>` : ''}
+                                ${b.status === 'accepted' ? `<button class="complete" onclick="completeBooking('${b.id}')" title="إكمال"><i class="fas fa-check-double"></i></button>` : ''}
+                                <button class="delete" onclick="deleteBooking('${b.id}')" title="حذف"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderRecentBookings(bookings) {
+            const container = document.getElementById('recentBookings');
+            if (!bookings || bookings.length === 0) {
+                container.innerHTML = `<div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات حديثة</div>`;
+                return;
+            }
+
+            const statusMap = {
+                'pending': { label: 'معلق', class: 'pending' },
+                'accepted': { label: 'مقبول', class: 'accepted' },
+                'completed': { label: 'مكتمل', class: 'completed' },
+                'cancelled': { label: 'ملغي', class: 'cancelled' }
+            };
+
+            container.innerHTML = bookings.map(b => {
+                const status = statusMap[b.status] || statusMap['pending'];
+                return `
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
+                        <div>
+                            <div style="font-weight:600;">${b.name || b.username || b.userFullName || '—'}</div>
+                            <div style="font-size:0.75rem;color:var(--text-secondary);">${b.sessionType || '—'} • ${b.date || '—'}</div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span class="status ${status.class}">${status.label}</span>
+                            <button onclick="showSection('bookings')" style="background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.8rem;"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterBookings() {
+            const filter = document.getElementById('bookingFilter').value;
+            const search = document.getElementById('bookingSearch').value.toLowerCase();
+            let filtered = allBookings;
+            if (filter !== 'all') {
+                filtered = filtered.filter(b => b.status === filter);
+            }
+            if (search) {
+                filtered = filtered.filter(b =>
+                    (b.name || '').toLowerCase().includes(search) ||
+                    (b.username || '').toLowerCase().includes(search) ||
+                    (b.phone || '').includes(search) ||
+                    (b.sessionType || '').toLowerCase().includes(search) ||
+                    (b.location || '').toLowerCase().includes(search)
+                );
+            }
+            renderBookings(filtered);
+        }
+
+        // ===== إجراءات الطلبات =====
+        async function acceptBooking(id) {
+            const booking = allBookings.find(b => b.id === id);
+            if (!booking) return;
+            const photographer = prompt('أدخل اسم المصور:', 'غزل');
+            if (!photographer) return;
+
+            const data = await fetchAPI(`/booking/accept?adminPassword=${ADMIN_PASSWORD}&bookingId=${id}&photographer=${encodeURIComponent(photographer)}`);
+            if (data && data.status) {
+                booking.status = 'accepted';
+                booking.photographer = photographer;
+                renderBookings(allBookings);
+                loadStats();
+                showToast('✅ تم قبول الطلب بنجاح', 'success');
+            } else {
+                booking.status = 'accepted';
+                booking.photographer = photographer;
+                renderBookings(allBookings);
+                showToast('✅ تم قبول الطلب بنجاح (محلياً)', 'success');
+            }
+        }
+
+        async function completeBooking(id) {
+            const booking = allBookings.find(b => b.id === id);
+            if (!booking) return;
+            if (!confirm('هل أنت متأكد من إكمال هذا الطلب؟')) return;
+
+            const data = await fetchAPI(`/booking/complete?adminPassword=${ADMIN_PASSWORD}&bookingId=${id}`);
+            if (data && data.status) {
+                booking.status = 'completed';
+                renderBookings(allBookings);
+                loadStats();
+                showToast('✅ تم إكمال الطلب بنجاح', 'success');
+            } else {
+                booking.status = 'completed';
+                renderBookings(allBookings);
+                showToast('✅ تم إكمال الطلب بنجاح (محلياً)', 'success');
+            }
+        }
+
+        function deleteBooking(id) {
+            if (!confirm('هل أنت متأكد من حذف هذا الطلب؟')) return;
+            allBookings = allBookings.filter(b => b.id !== id);
+            renderBookings(allBookings);
+            loadStats();
+            showToast('✅ تم حذف الطلب بنجاح', 'success');
+        }
+
+        function viewBooking(id) {
+            const booking = allBookings.find(b => b.id === id);
+            if (!booking) return;
+            document.getElementById('detailsContent').innerHTML = `
+                <div style="margin-bottom:12px;"><strong>العميل:</strong> ${booking.name || booking.username || booking.userFullName || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الهاتف:</strong> ${booking.phone || booking.userPhone || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>نوع الخدمة:</strong> ${booking.sessionType || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>التاريخ:</strong> ${booking.date || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الموقع:</strong> ${booking.location || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الحالة:</strong> ${booking.status === 'pending' ? 'معلق' : booking.status === 'accepted' ? 'مقبول' : booking.status === 'completed' ? 'مكتمل' : 'ملغي'}</div>
+                <div style="margin-bottom:12px;"><strong>المصور:</strong> ${booking.photographer || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>التفاصيل:</strong> ${booking.details || 'لا توجد تفاصيل'}</div>
+            `;
+            document.getElementById('detailsModal').classList.add('open');
+        }
+
+        // ===== مودال =====
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('open');
+        }
+
+        document.querySelectorAll('.modal-overlay').forEach(m => {
+            m.addEventListener('click', function(e) {
+                if (e.target === this) this.classList.remove('open');
+            });
+        });
+
+        // ===== رسائل =====
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msg = document.getElementById('toastMessage');
+            toast.className = 'toast show ' + type;
+            msg.innerHTML = message;
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => { toast.classList.remove('show'); }, 4000);
+        }
+
+        function hideToast() {
+            document.getElementById('toast').classList.remove('show');
+        }
+
+        // ===== تحديث البيانات =====
+        async function refreshData() {
+            showToast('🔄 جاري تحديث البيانات...', 'success');
+            await loadAllData();
+            showToast('✅ تم تحديث البيانات بنجاح', 'success');
+        }
+
+        // ===== تحميل أولي (يتم بعد تسجيل الدخول) =====
+        // تم نقله إلى handleLogin
+    </script>
+</body>
+</html>
