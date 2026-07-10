@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="images/avatar1.png" width="50" height="50"/>
 
     <style>
-        /* ===== جميع الأنماط ===== */
+        /* ===== جميع الأنماط (نفسها) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -1226,7 +1226,7 @@
 
         <!-- ===== وسائل التواصل ===== -->
         <div class="social-links">
-            <a href="https://www.instagram.com/_gh_photographer?igsh=MTkxOHl3ZWx1anVsMw==" target="_blank" onclick="openInstagramModal(event)"><i class="fab fa-instagram"></i></a>
+            <a href="#" onclick="openInstagramModal(event)"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/share/1BbBbTw7UF/" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/+963993845389" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://t.me/ghazal_photography" target="_blank"><i class="fab fa-telegram"></i></a>
@@ -1414,6 +1414,11 @@
                     <div class="form-group">
                         <label><i class="fas fa-location-dot"></i> الموقع</label>
                         <input type="text" id="bookLocation" placeholder="أدخل موقع التصوير" required />
+                    </div>
+                    <!-- ===== رقم التواصل (واتساب) ===== -->
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> رقم التواصل (واتساب)</label>
+                        <input type="tel" id="bookPhone" placeholder="أدخل رقم واتساب للتواصل" required />
                     </div>
                     <div class="form-group">
                         <label><i class="fas fa-comment"></i> تفاصيل إضافية</label>
@@ -1756,6 +1761,7 @@
             const sessionType = document.getElementById('bookSessionType').value.trim();
             const date = document.getElementById('bookDate').value;
             const location = document.getElementById('bookLocation').value.trim();
+            const phone = document.getElementById('bookPhone').value.trim();
             const details = document.getElementById('bookDetails').value.trim();
             const messageDiv = document.getElementById('bookingMessage');
 
@@ -1775,6 +1781,10 @@
                 messageDiv.innerHTML = '<span style="color:#f44336;">❌ الرجاء إدخال الموقع</span>';
                 return;
             }
+            if (!phone) {
+                messageDiv.innerHTML = '<span style="color:#f44336;">❌ الرجاء إدخال رقم التواصل (واتساب)</span>';
+                return;
+            }
 
             messageDiv.innerHTML = '<span style="color:var(--text-secondary);"><i class="fas fa-spinner fa-spin"></i> جاري إرسال الطلب...</span>';
 
@@ -1791,6 +1801,7 @@
                     document.getElementById('bookSessionType').value = '';
                     document.getElementById('bookDate').value = '';
                     document.getElementById('bookLocation').value = '';
+                    document.getElementById('bookPhone').value = '';
                     document.getElementById('bookDetails').value = '';
                     setTimeout(() => { updateStats(); }, 1000);
                 } else {
