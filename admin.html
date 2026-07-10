@@ -1,12 +1,12 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
-    &lt;title&gt;Ghazal | لوحة التحكم&lt;/title&gt;
-    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;/&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;/&gt;
-    &lt;style&gt;
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ghazal | لوحة التحكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +30,7 @@
             --sidebar-width: 250px;
         }
 
-        [data-theme=&quot;light&quot;] {
+        [data-theme="light"] {
             --bg: #f5f0ff;
             --bg-card: rgba(255, 255, 255, 0.85);
             --bg-card-hover: rgba(255, 255, 255, 0.95);
@@ -41,7 +41,7 @@
             --primary-glow: rgba(124, 58, 237, 0.1);
         }
 
-        [data-theme=&quot;dark&quot;] {
+        [data-theme="dark"] {
             --bg: #08080a;
             --bg-card: rgba(18, 18, 22, 0.85);
             --bg-card-hover: rgba(28, 28, 34, 0.95);
@@ -53,7 +53,7 @@
         }
 
         body {
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             background: var(--bg);
             color: var(--text);
             transition: background 0.4s ease, color 0.3s ease;
@@ -139,7 +139,7 @@
             background: rgba(10, 10, 15, 0.3);
             border: 1px solid var(--border);
             border-radius: 12px;
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             font-size: 0.9rem;
             color: var(--text);
             transition: var(--transition);
@@ -161,7 +161,7 @@
             border-radius: 12px;
             cursor: pointer;
             transition: var(--transition);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             width: 100%;
             box-shadow: 0 4px 20px var(--primary-glow);
         }
@@ -300,7 +300,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -323,7 +323,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -484,7 +484,7 @@
             border: 1px solid var(--border);
             background: rgba(10, 10, 15, 0.3);
             color: var(--text);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             font-size: 0.8rem;
             transition: var(--transition);
         }
@@ -572,7 +572,7 @@
             color: var(--text-secondary);
             cursor: pointer;
             transition: var(--transition);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             font-size: 0.7rem;
             display: flex;
             align-items: center;
@@ -689,7 +689,7 @@
             background: rgba(10, 10, 15, 0.3);
             border: 1px solid var(--border);
             border-radius: 10px;
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             font-size: 0.85rem;
             color: var(--text);
             transition: var(--transition);
@@ -718,7 +718,7 @@
             border-radius: 12px;
             cursor: pointer;
             transition: var(--transition);
-            font-family: &#039;Tajawal&#039;, sans-serif;
+            font-family: 'Tajawal', sans-serif;
             width: 100%;
             box-shadow: 0 4px 20px var(--primary-glow);
         }
@@ -886,245 +886,245 @@
             margin-bottom: 12px;
             display: block;
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
+    </style>
+</head>
+<body>
 
-    &lt;!-- ===== شاشة تسجيل الدخول ===== --&gt;
-    &lt;div class=&quot;login-overlay&quot; id=&quot;loginOverlay&quot;&gt;
-        &lt;div class=&quot;login-box&quot;&gt;
-            &lt;div class=&quot;login-logo&quot;&gt;
-                &lt;img src=&quot;images/avatar1.png&quot; alt=&quot;Ghazal&quot;/&gt;
-            &lt;/div&gt;
-            &lt;h2&gt;Ghazal&lt;/h2&gt;
-            &lt;p&gt;لوحة التحكم - أدخل كلمة المرور&lt;/p&gt;
-            &lt;div class=&quot;form-group&quot;&gt;
-                &lt;label&gt;&lt;i class=&quot;fas fa-lock&quot;&gt;&lt;/i&gt; كلمة المرور&lt;/label&gt;
-                &lt;input type=&quot;password&quot; id=&quot;loginPassword&quot; placeholder=&quot;أدخل كلمة مرور الأدمن&quot; /&gt;
-            &lt;/div&gt;
-            &lt;button class=&quot;btn-login&quot; onclick=&quot;handleLogin()&quot;&gt;
-                &lt;i class=&quot;fas fa-sign-in-alt&quot;&gt;&lt;/i&gt; دخول
-            &lt;/button&gt;
-            &lt;div class=&quot;login-error&quot; id=&quot;loginError&quot;&gt;❌ كلمة المرور غير صحيحة&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+    <!-- ===== شاشة تسجيل الدخول ===== -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div class="login-logo">
+                <img src="images/avatar1.png" alt="Ghazal"/>
+            </div>
+            <h2>Ghazal</h2>
+            <p>لوحة التحكم - أدخل كلمة المرور</p>
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                <input type="password" id="loginPassword" placeholder="أدخل كلمة مرور الأدمن" />
+            </div>
+            <button class="btn-login" onclick="handleLogin()">
+                <i class="fas fa-sign-in-alt"></i> دخول
+            </button>
+            <div class="login-error" id="loginError">❌ كلمة المرور غير صحيحة</div>
+        </div>
+    </div>
 
-    &lt;!-- ===== القائمة الجانبية ===== --&gt;
-    &lt;aside class=&quot;sidebar&quot; id=&quot;sidebar&quot;&gt;
-        &lt;div class=&quot;logo&quot;&gt;
-            &lt;img src=&quot;images/avatar1.png&quot; alt=&quot;Ghazal&quot;/&gt;
-            &lt;div&gt;
-                &lt;h2&gt;Ghazal&lt;/h2&gt;
-                &lt;span&gt;لوحة التحكم&lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+    <!-- ===== القائمة الجانبية ===== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="images/avatar1.png" alt="Ghazal"/>
+            <div>
+                <h2>Ghazal</h2>
+                <span>لوحة التحكم</span>
+            </div>
+        </div>
 
-        &lt;ul class=&quot;nav-list&quot;&gt;
-            &lt;li class=&quot;active&quot;&gt;&lt;a onclick=&quot;showSection(&#039;dashboard&#039;)&quot;&gt;&lt;i class=&quot;fas fa-chart-pie&quot;&gt;&lt;/i&gt; الرئيسية&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a onclick=&quot;showSection(&#039;comments&#039;)&quot;&gt;&lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt; التعليقات &lt;span class=&quot;badge&quot; id=&quot;commentsBadge&quot;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a onclick=&quot;showSection(&#039;bookings&#039;)&quot;&gt;&lt;i class=&quot;fas fa-calendar-check&quot;&gt;&lt;/i&gt; الطلبات &lt;span class=&quot;badge&quot; id=&quot;bookingsBadge&quot;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
+        <ul class="nav-list">
+            <li class="active"><a onclick="showSection('dashboard')"><i class="fas fa-chart-pie"></i> الرئيسية</a></li>
+            <li><a onclick="showSection('comments')"><i class="fas fa-star"></i> التعليقات <span class="badge" id="commentsBadge">0</span></a></li>
+            <li><a onclick="showSection('bookings')"><i class="fas fa-calendar-check"></i> الطلبات <span class="badge" id="bookingsBadge">0</span></a></li>
+        </ul>
 
-        &lt;div class=&quot;sidebar-footer&quot;&gt;
-            &lt;button class=&quot;theme-btn&quot; id=&quot;themeToggle&quot;&gt;
-                &lt;i class=&quot;fas fa-palette&quot;&gt;&lt;/i&gt; تغيير الثيم
-            &lt;/button&gt;
-            &lt;button class=&quot;logout-btn&quot; onclick=&quot;handleLogout()&quot;&gt;
-                &lt;i class=&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt; تسجيل الخروج
-            &lt;/button&gt;
-            &lt;a href=&quot;../index.html&quot; style=&quot;text-align:center;color:var(--text-secondary);font-size:0.8rem;text-decoration:none;padding:8px;&quot;&gt;
-                &lt;i class=&quot;fas fa-arrow-left&quot;&gt;&lt;/i&gt; العودة للموقع
-            &lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/aside&gt;
+        <div class="sidebar-footer">
+            <button class="theme-btn" id="themeToggle">
+                <i class="fas fa-palette"></i> تغيير الثيم
+            </button>
+            <button class="logout-btn" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+            </button>
+            <a href="../index.html" style="text-align:center;color:var(--text-secondary);font-size:0.8rem;text-decoration:none;padding:8px;">
+                <i class="fas fa-arrow-left"></i> العودة للموقع
+            </a>
+        </div>
+    </aside>
 
-    &lt;!-- ===== المحتوى الرئيسي ===== --&gt;
-    &lt;main class=&quot;main-content&quot; id=&quot;mainContent&quot; style=&quot;display:none;&quot;&gt;
+    <!-- ===== المحتوى الرئيسي ===== -->
+    <main class="main-content" id="mainContent" style="display:none;">
 
-        &lt;!-- ===== الهيدر ===== --&gt;
-        &lt;header class=&quot;header&quot;&gt;
-            &lt;button class=&quot;menu-toggle&quot; onclick=&quot;toggleSidebar()&quot;&gt;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-            &lt;h1 id=&quot;pageTitle&quot;&gt;📊 لوحة التحكم&lt;/h1&gt;
-            &lt;div class=&quot;header-actions&quot;&gt;
-                &lt;span class=&quot;admin-badge&quot;&gt;&lt;i class=&quot;fas fa-crown&quot;&gt;&lt;/i&gt; مدير&lt;/span&gt;
-                &lt;button onclick=&quot;refreshData()&quot; style=&quot;background:none;border:none;color:var(--text-secondary);font-size:1.1rem;cursor:pointer;&quot;&gt;
-                    &lt;i class=&quot;fas fa-sync-alt&quot;&gt;&lt;/i&gt;
-                &lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/header&gt;
+        <!-- ===== الهيدر ===== -->
+        <header class="header">
+            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <h1 id="pageTitle">📊 لوحة التحكم</h1>
+            <div class="header-actions">
+                <span class="admin-badge"><i class="fas fa-crown"></i> مدير</span>
+                <button onclick="refreshData()" style="background:none;border:none;color:var(--text-secondary);font-size:1.1rem;cursor:pointer;">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
 
-        &lt;!-- ===== الرئيسية ===== --&gt;
-        &lt;section id=&quot;dashboardSection&quot;&gt;
-            &lt;div class=&quot;stats-grid&quot; id=&quot;statsGrid&quot;&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon purple&quot;&gt;&lt;i class=&quot;fas fa-users&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statClients&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;إجمالي العملاء&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon orange&quot;&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statPending&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;طلبات معلقة&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon green&quot;&gt;&lt;i class=&quot;fas fa-check-circle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statCompleted&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;طلبات مكتملة&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon gold&quot;&gt;&lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statRating&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;متوسط التقييم&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon blue&quot;&gt;&lt;i class=&quot;fas fa-comment&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statComments&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;إجمالي التعليقات&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;stat-card&quot;&gt;
-                    &lt;div class=&quot;stat-icon red&quot;&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;div class=&quot;stat-number&quot; id=&quot;statAccepted&quot;&gt;0&lt;/div&gt;
-                    &lt;div class=&quot;stat-label&quot;&gt;طلبات مقبولة&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
+        <!-- ===== الرئيسية ===== -->
+        <section id="dashboardSection">
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" id="statClients">0</div>
+                    <div class="stat-label">إجمالي العملاء</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" id="statPending">0</div>
+                    <div class="stat-label">طلبات معلقة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-number" id="statCompleted">0</div>
+                    <div class="stat-label">طلبات مكتملة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon gold"><i class="fas fa-star"></i></div>
+                    <div class="stat-number" id="statRating">0</div>
+                    <div class="stat-label">متوسط التقييم</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-comment"></i></div>
+                    <div class="stat-number" id="statComments">0</div>
+                    <div class="stat-label">إجمالي التعليقات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" id="statAccepted">0</div>
+                    <div class="stat-label">طلبات مقبولة</div>
+                </div>
+            </div>
 
-            &lt;div class=&quot;section&quot;&gt;
-                &lt;div class=&quot;section-header&quot;&gt;
-                    &lt;h3&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt; أحدث الطلبات&lt;/h3&gt;
-                    &lt;button onclick=&quot;showSection(&#039;bookings&#039;)&quot; style=&quot;background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.85rem;&quot;&gt;عرض الكل &rarr;&lt;/button&gt;
-                &lt;/div&gt;
-                &lt;div id=&quot;recentBookings&quot;&gt;
-                    &lt;div class=&quot;loading&quot;&gt;&lt;i class=&quot;fas fa-spinner&quot;&gt;&lt;/i&gt; جاري التحميل...&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-clock"></i> أحدث الطلبات</h3>
+                    <button onclick="showSection('bookings')" style="background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.85rem;">عرض الكل →</button>
+                </div>
+                <div id="recentBookings">
+                    <div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div>
+                </div>
+            </div>
+        </section>
 
-        &lt;!-- ===== التعليقات ===== --&gt;
-        &lt;section id=&quot;commentsSection&quot; style=&quot;display:none;&quot;&gt;
-            &lt;div class=&quot;section&quot;&gt;
-                &lt;div class=&quot;section-header&quot;&gt;
-                    &lt;h3&gt;&lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt; إدارة التعليقات&lt;/h3&gt;
-                    &lt;div class=&quot;search-box&quot;&gt;
-                        &lt;select id=&quot;commentFilter&quot; onchange=&quot;filterComments()&quot;&gt;
-                            &lt;option value=&quot;all&quot;&gt;جميع التعليقات&lt;/option&gt;
-                            &lt;option value=&quot;approved&quot;&gt;مقبولة&lt;/option&gt;
-                            &lt;option value=&quot;pending&quot;&gt;قيد المراجعة&lt;/option&gt;
-                            &lt;option value=&quot;rejected&quot;&gt;مرفوضة&lt;/option&gt;
-                        &lt;/select&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;table-wrap&quot;&gt;
-                    &lt;table&gt;
-                        &lt;thead&gt;
-                            &lt;tr&gt;
-                                &lt;th&gt;المستخدم&lt;/th&gt;
-                                &lt;th&gt;التقييم&lt;/th&gt;
-                                &lt;th&gt;التعليق&lt;/th&gt;
-                                &lt;th&gt;الحالة&lt;/th&gt;
-                                &lt;th&gt;التاريخ&lt;/th&gt;
-                                &lt;th&gt;الإجراءات&lt;/th&gt;
-                            &lt;/tr&gt;
-                        &lt;/thead&gt;
-                        &lt;tbody id=&quot;commentsTableBody&quot;&gt;
-                            &lt;tr&gt;&lt;td colspan=&quot;6&quot;&gt;&lt;div class=&quot;loading&quot;&gt;&lt;i class=&quot;fas fa-spinner&quot;&gt;&lt;/i&gt; جاري التحميل...&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
-                        &lt;/tbody&gt;
-                    &lt;/table&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
+        <!-- ===== التعليقات ===== -->
+        <section id="commentsSection" style="display:none;">
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-star"></i> إدارة التعليقات</h3>
+                    <div class="search-box">
+                        <select id="commentFilter" onchange="filterComments()">
+                            <option value="all">جميع التعليقات</option>
+                            <option value="approved">مقبولة</option>
+                            <option value="pending">قيد المراجعة</option>
+                            <option value="rejected">مرفوضة</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المستخدم</th>
+                                <th>التقييم</th>
+                                <th>التعليق</th>
+                                <th>الحالة</th>
+                                <th>التاريخ</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="commentsTableBody">
+                            <tr><td colspan="6"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-        &lt;!-- ===== الطلبات ===== --&gt;
-        &lt;section id=&quot;bookingsSection&quot; style=&quot;display:none;&quot;&gt;
-            &lt;div class=&quot;section&quot;&gt;
-                &lt;div class=&quot;section-header&quot;&gt;
-                    &lt;h3&gt;&lt;i class=&quot;fas fa-calendar-check&quot;&gt;&lt;/i&gt; إدارة الطلبات&lt;/h3&gt;
-                    &lt;div class=&quot;search-box&quot;&gt;
-                        &lt;select id=&quot;bookingFilter&quot; onchange=&quot;filterBookings()&quot;&gt;
-                            &lt;option value=&quot;all&quot;&gt;جميع الطلبات&lt;/option&gt;
-                            &lt;option value=&quot;pending&quot;&gt;معلقة&lt;/option&gt;
-                            &lt;option value=&quot;accepted&quot;&gt;مقبولة&lt;/option&gt;
-                            &lt;option value=&quot;completed&quot;&gt;مكتملة&lt;/option&gt;
-                            &lt;option value=&quot;cancelled&quot;&gt;ملغية&lt;/option&gt;
-                        &lt;/select&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;bookingSearch&quot; placeholder=&quot;🔍 بحث...&quot; oninput=&quot;filterBookings()&quot;/&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;table-wrap&quot;&gt;
-                    &lt;table&gt;
-                        &lt;thead&gt;
-                            &lt;tr&gt;
-                                &lt;th&gt;العميل&lt;/th&gt;
-                                &lt;th&gt;الهاتف&lt;/th&gt;
-                                &lt;th&gt;نوع الخدمة&lt;/th&gt;
-                                &lt;th&gt;التاريخ&lt;/th&gt;
-                                &lt;th&gt;الموقع&lt;/th&gt;
-                                &lt;th&gt;الحالة&lt;/th&gt;
-                                &lt;th&gt;المصور&lt;/th&gt;
-                                &lt;th&gt;الإجراءات&lt;/th&gt;
-                            &lt;/tr&gt;
-                        &lt;/thead&gt;
-                        &lt;tbody id=&quot;bookingsTableBody&quot;&gt;
-                            &lt;tr&gt;&lt;td colspan=&quot;8&quot;&gt;&lt;div class=&quot;loading&quot;&gt;&lt;i class=&quot;fas fa-spinner&quot;&gt;&lt;/i&gt; جاري التحميل...&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
-                        &lt;/tbody&gt;
-                    &lt;/table&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/section&gt;
+        <!-- ===== الطلبات ===== -->
+        <section id="bookingsSection" style="display:none;">
+            <div class="section">
+                <div class="section-header">
+                    <h3><i class="fas fa-calendar-check"></i> إدارة الطلبات</h3>
+                    <div class="search-box">
+                        <select id="bookingFilter" onchange="filterBookings()">
+                            <option value="all">جميع الطلبات</option>
+                            <option value="pending">معلقة</option>
+                            <option value="accepted">مقبولة</option>
+                            <option value="completed">مكتملة</option>
+                            <option value="cancelled">ملغية</option>
+                        </select>
+                        <input type="text" id="bookingSearch" placeholder="🔍 بحث..." oninput="filterBookings()"/>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>العميل</th>
+                                <th>الهاتف</th>
+                                <th>نوع الخدمة</th>
+                                <th>التاريخ</th>
+                                <th>الموقع</th>
+                                <th>الحالة</th>
+                                <th>المصور</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody">
+                            <tr><td colspan="8"><div class="loading"><i class="fas fa-spinner"></i> جاري التحميل...</div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-    &lt;/main&gt;
+    </main>
 
-    &lt;!-- ===== مودال عرض التفاصيل ===== --&gt;
-    &lt;div class=&quot;modal-overlay&quot; id=&quot;detailsModal&quot;&gt;
-        &lt;div class=&quot;modal&quot;&gt;
-            &lt;button class=&quot;modal-close&quot; onclick=&quot;closeModal(&#039;detailsModal&#039;)&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-            &lt;h3&gt;&lt;i class=&quot;fas fa-info-circle&quot;&gt;&lt;/i&gt; تفاصيل العنصر&lt;/h3&gt;
-            &lt;div id=&quot;detailsContent&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+    <!-- ===== مودال عرض التفاصيل ===== -->
+    <div class="modal-overlay" id="detailsModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('detailsModal')"><i class="fas fa-times"></i></button>
+            <h3><i class="fas fa-info-circle"></i> تفاصيل العنصر</h3>
+            <div id="detailsContent"></div>
+        </div>
+    </div>
 
-    &lt;!-- ===== رسالة منبثقة ===== --&gt;
-    &lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;
-        &lt;span class=&quot;toast-close&quot; onclick=&quot;hideToast()&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-        &lt;span id=&quot;toastMessage&quot;&gt;&lt;/span&gt;
-    &lt;/div&gt;
+    <!-- ===== رسالة منبثقة ===== -->
+    <div class="toast" id="toast">
+        <span class="toast-close" onclick="hideToast()"><i class="fas fa-times"></i></span>
+        <span id="toastMessage"></span>
+    </div>
 
-    &lt;script&gt;
+    <script>
         // ===== كلمة مرور الأدمن =====
-        const ADMIN_PASSWORD = &#039;zebakghazal08@&#039;;
+        const ADMIN_PASSWORD = 'zebakghazal08@';
 
         // ===== API Base URL =====
-        const API_BASE = &#039;https://api-dataflowx.vercel.app/api/v1/arege/ph-ghazal&#039;;
+        const API_BASE = 'https://api-dataflowx.vercel.app/api/v1/arege/ph-ghazal';
 
         // ===== تسجيل الدخول =====
         function handleLogin() {
-            const password = document.getElementById(&#039;loginPassword&#039;).value;
-            const error = document.getElementById(&#039;loginError&#039;);
+            const password = document.getElementById('loginPassword').value;
+            const error = document.getElementById('loginError');
 
             if (password === ADMIN_PASSWORD) {
-                document.getElementById(&#039;loginOverlay&#039;).classList.add(&#039;hidden&#039;);
-                document.getElementById(&#039;mainContent&#039;).style.display = &#039;block&#039;;
+                document.getElementById('loginOverlay').classList.add('hidden');
+                document.getElementById('mainContent').style.display = 'block';
                 loadAllData();
-                error.classList.remove(&#039;show&#039;);
+                error.classList.remove('show');
             } else {
-                error.classList.add(&#039;show&#039;);
-                setTimeout(() =&gt; {
-                    error.classList.remove(&#039;show&#039;);
+                error.classList.add('show');
+                setTimeout(() => {
+                    error.classList.remove('show');
                 }, 3000);
             }
         }
 
         // ===== تسجيل الخروج =====
         function handleLogout() {
-            if (confirm(&#039;هل أنت متأكد من تسجيل الخروج؟&#039;)) {
-                document.getElementById(&#039;loginOverlay&#039;).classList.remove(&#039;hidden&#039;);
-                document.getElementById(&#039;mainContent&#039;).style.display = &#039;none&#039;;
-                document.getElementById(&#039;loginPassword&#039;).value = &#039;&#039;;
+            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                document.getElementById('loginOverlay').classList.remove('hidden');
+                document.getElementById('mainContent').style.display = 'none';
+                document.getElementById('loginPassword').value = '';
             }
         }
 
         // ===== الضغط على Enter في حقل كلمة المرور =====
-        document.getElementById(&#039;loginPassword&#039;).addEventListener(&#039;keypress&#039;, function(e) {
-            if (e.key === &#039;Enter&#039;) {
+        document.getElementById('loginPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
                 handleLogin();
             }
         });
@@ -1135,58 +1135,58 @@
 
         // ===== الثيمات =====
         const themes = [
-            { name: &#039;بنفسجي غامق&#039;, value: &#039;&#039; },
-            { name: &#039;بنفسجي وأبيض&#039;, value: &#039;light&#039; },
-            { name: &#039;بنفسجي وأسود&#039;, value: &#039;dark&#039; }
+            { name: 'بنفسجي غامق', value: '' },
+            { name: 'بنفسجي وأبيض', value: 'light' },
+            { name: 'بنفسجي وأسود', value: 'dark' }
         ];
         let themeIndex = 0;
 
         function applyTheme(index) {
             const theme = themes[index];
-            document.documentElement.setAttribute(&#039;data-theme&#039;, theme.value);
-            localStorage.setItem(&#039;ghazal-admin-theme&#039;, theme.value);
+            document.documentElement.setAttribute('data-theme', theme.value);
+            localStorage.setItem('ghazal-admin-theme', theme.value);
         }
 
-        document.getElementById(&#039;themeToggle&#039;).addEventListener(&#039;click&#039;, function() {
+        document.getElementById('themeToggle').addEventListener('click', function() {
             themeIndex = (themeIndex + 1) % themes.length;
             applyTheme(themeIndex);
         });
 
-        const savedTheme = localStorage.getItem(&#039;ghazal-admin-theme&#039;);
+        const savedTheme = localStorage.getItem('ghazal-admin-theme');
         if (savedTheme) {
-            const found = themes.findIndex(t =&gt; t.value === savedTheme);
+            const found = themes.findIndex(t => t.value === savedTheme);
             if (found !== -1) { themeIndex = found; applyTheme(themeIndex); }
         }
 
         // ===== القائمة الجانبية =====
         function toggleSidebar() {
-            document.getElementById(&#039;sidebar&#039;).classList.toggle(&#039;open&#039;);
+            document.getElementById('sidebar').classList.toggle('open');
         }
 
-        document.addEventListener(&#039;click&#039;, function(e) {
-            const sidebar = document.getElementById(&#039;sidebar&#039;);
-            if (window.innerWidth &lt;= 768 &amp;&amp; sidebar.classList.contains(&#039;open&#039;) &amp;&amp; !sidebar.contains(e.target) &amp;&amp; !e.target.closest(&#039;.menu-toggle&#039;)) {
-                sidebar.classList.remove(&#039;open&#039;);
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 768 && sidebar.classList.contains('open') && !sidebar.contains(e.target) && !e.target.closest('.menu-toggle')) {
+                sidebar.classList.remove('open');
             }
         });
 
         function showSection(section) {
-            const sections = [&#039;dashboard&#039;, &#039;comments&#039;, &#039;bookings&#039;];
-            sections.forEach(s =&gt; {
-                document.getElementById(s + &#039;Section&#039;).style.display = s === section ? &#039;block&#039; : &#039;none&#039;;
+            const sections = ['dashboard', 'comments', 'bookings'];
+            sections.forEach(s => {
+                document.getElementById(s + 'Section').style.display = s === section ? 'block' : 'none';
             });
 
             const titles = {
-                dashboard: &#039;📊 لوحة التحكم&#039;,
-                comments: &#039;⭐ التعليقات&#039;,
-                bookings: &#039;📅 الطلبات&#039;
+                dashboard: '📊 لوحة التحكم',
+                comments: '⭐ التعليقات',
+                bookings: '📅 الطلبات'
             };
-            document.getElementById(&#039;pageTitle&#039;).textContent = titles[section] || &#039;لوحة التحكم&#039;;
+            document.getElementById('pageTitle').textContent = titles[section] || 'لوحة التحكم';
 
-            document.querySelectorAll(&#039;.sidebar .nav-list a&#039;).forEach(a =&gt; a.parentElement.classList.remove(&#039;active&#039;));
-            document.querySelector(`.sidebar .nav-list a[onclick*=&quot;${section}&quot;]`)?.parentElement.classList.add(&#039;active&#039;);
+            document.querySelectorAll('.sidebar .nav-list a').forEach(a => a.parentElement.classList.remove('active'));
+            document.querySelector(`.sidebar .nav-list a[onclick*="${section}"]`)?.parentElement.classList.add('active');
 
-            if (window.innerWidth &lt;= 768) document.getElementById(&#039;sidebar&#039;).classList.remove(&#039;open&#039;);
+            if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open');
         }
 
         // ===== جلب البيانات =====
@@ -1196,7 +1196,7 @@
                 const data = await response.json();
                 return data;
             } catch (error) {
-                console.error(&#039;API Error:&#039;, error);
+                console.error('API Error:', error);
                 return null;
             }
         }
@@ -1209,252 +1209,252 @@
         }
 
         async function loadStats() {
-            const data = await fetchAPI(&#039;/stats&#039;);
-            if (data &amp;&amp; data.status) {
+            const data = await fetchAPI('/stats');
+            if (data && data.status) {
                 const stats = data.statistics;
-                document.getElementById(&#039;statClients&#039;).textContent = stats.totalClients || 0;
-                document.getElementById(&#039;statPending&#039;).textContent = stats.pendingProjects || 0;
-                document.getElementById(&#039;statCompleted&#039;).textContent = stats.completedProjects || 0;
-                document.getElementById(&#039;statRating&#039;).textContent = stats.averageRating || 0;
-                document.getElementById(&#039;statComments&#039;).textContent = stats.totalReviews || 0;
-                document.getElementById(&#039;statAccepted&#039;).textContent = stats.acceptedProjects || 0;
-                document.getElementById(&#039;commentsBadge&#039;).textContent = stats.totalReviews || 0;
-                document.getElementById(&#039;bookingsBadge&#039;).textContent = stats.totalProjects || 0;
+                document.getElementById('statClients').textContent = stats.totalClients || 0;
+                document.getElementById('statPending').textContent = stats.pendingProjects || 0;
+                document.getElementById('statCompleted').textContent = stats.completedProjects || 0;
+                document.getElementById('statRating').textContent = stats.averageRating || 0;
+                document.getElementById('statComments').textContent = stats.totalReviews || 0;
+                document.getElementById('statAccepted').textContent = stats.acceptedProjects || 0;
+                document.getElementById('commentsBadge').textContent = stats.totalReviews || 0;
+                document.getElementById('bookingsBadge').textContent = stats.totalProjects || 0;
             }
         }
 
         async function loadComments() {
-            const tbody = document.getElementById(&#039;commentsTableBody&#039;);
+            const tbody = document.getElementById('commentsTableBody');
             
             const data = await fetchAPI(`/comments/all?adminPassword=${ADMIN_PASSWORD}`);
-            if (data &amp;&amp; data.status &amp;&amp; data.comments) {
+            if (data && data.status && data.comments) {
                 allComments = data.comments;
             } else {
                 allComments = [
-                    { id: &#039;1&#039;, name: &#039;أحمد السالم&#039;, rating: 5, comment: &#039;خدمة رائعة جداً، أنصح الجميع بغزل!&#039;, status: &#039;approved&#039;, createdAt: new Date().toISOString() },
-                    { id: &#039;2&#039;, name: &#039;سارة الخالد&#039;, rating: 4, comment: &#039;تصوير جميل واحترافي، شكراً غزل.&#039;, status: &#039;pending&#039;, createdAt: new Date(Date.now() - 86400000).toISOString() },
-                    { id: &#039;3&#039;, name: &#039;خالد المنصور&#039;, rating: 5, comment: &#039;أفضل مصورة تعاملت معها، نتائج مذهلة!&#039;, status: &#039;approved&#039;, createdAt: new Date(Date.now() - 172800000).toISOString() },
-                    { id: &#039;4&#039;, name: &#039;نورة الفايز&#039;, rating: 5, comment: &#039;تجربة لا تنسى، الصور كانت أجمل من المتوقع.&#039;, status: &#039;rejected&#039;, createdAt: new Date(Date.now() - 259200000).toISOString() }
+                    { id: '1', name: 'أحمد السالم', rating: 5, comment: 'خدمة رائعة جداً، أنصح الجميع بغزل!', status: 'approved', createdAt: new Date().toISOString() },
+                    { id: '2', name: 'سارة الخالد', rating: 4, comment: 'تصوير جميل واحترافي، شكراً غزل.', status: 'pending', createdAt: new Date(Date.now() - 86400000).toISOString() },
+                    { id: '3', name: 'خالد المنصور', rating: 5, comment: 'أفضل مصورة تعاملت معها، نتائج مذهلة!', status: 'approved', createdAt: new Date(Date.now() - 172800000).toISOString() },
+                    { id: '4', name: 'نورة الفايز', rating: 5, comment: 'تجربة لا تنسى، الصور كانت أجمل من المتوقع.', status: 'rejected', createdAt: new Date(Date.now() - 259200000).toISOString() }
                 ];
             }
 
-            document.getElementById(&#039;commentsBadge&#039;).textContent = allComments.filter(c =&gt; c.status === &#039;approved&#039;).length;
+            document.getElementById('commentsBadge').textContent = allComments.filter(c => c.status === 'approved').length;
             renderComments(allComments);
         }
 
         function renderComments(comments) {
-            const tbody = document.getElementById(&#039;commentsTableBody&#039;);
+            const tbody = document.getElementById('commentsTableBody');
             if (!comments || comments.length === 0) {
-                tbody.innerHTML = `&lt;tr&gt;&lt;td colspan=&quot;6&quot;&gt;&lt;div class=&quot;empty-state&quot;&gt;&lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt; لا توجد تعليقات&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;`;
+                tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><i class="fas fa-star"></i> لا توجد تعليقات</div></td></tr>`;
                 return;
             }
 
             const statusMap = {
-                &#039;approved&#039;: { label: &#039;مقبول&#039;, class: &#039;approved&#039; },
-                &#039;pending&#039;: { label: &#039;قيد المراجعة&#039;, class: &#039;pending&#039; },
-                &#039;rejected&#039;: { label: &#039;مرفوض&#039;, class: &#039;rejected&#039; }
+                'approved': { label: 'مقبول', class: 'approved' },
+                'pending': { label: 'قيد المراجعة', class: 'pending' },
+                'rejected': { label: 'مرفوض', class: 'rejected' }
             };
 
-            tbody.innerHTML = comments.map(c =&gt; {
-                const stars = &#039;⭐&#039;.repeat(c.rating) + &#039;☆&#039;.repeat(5 - (c.rating || 0));
-                const status = statusMap[c.status] || statusMap[&#039;pending&#039;];
-                const date = c.createdAt ? new Date(c.createdAt).toLocaleDateString(&#039;ar-EG&#039;) : &#039;&mdash;&#039;;
+            tbody.innerHTML = comments.map(c => {
+                const stars = '⭐'.repeat(c.rating) + '☆'.repeat(5 - (c.rating || 0));
+                const status = statusMap[c.status] || statusMap['pending'];
+                const date = c.createdAt ? new Date(c.createdAt).toLocaleDateString('ar-EG') : '—';
                 return `
-                    &lt;tr&gt;
-                        &lt;td&gt;${c.name || c.username || c.userFullName || &#039;مستخدم&#039;}&lt;/td&gt;
-                        &lt;td&gt;&lt;span class=&quot;stars&quot;&gt;${stars}&lt;/span&gt;&lt;/td&gt;
-                        &lt;td style=&quot;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;&quot;&gt;${c.comment || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;&lt;span class=&quot;status ${status.class}&quot;&gt;${status.label}&lt;/span&gt;&lt;/td&gt;
-                        &lt;td&gt;${date}&lt;/td&gt;
-                        &lt;td&gt;
-                            &lt;div class=&quot;actions&quot;&gt;
-                                &lt;button onclick=&quot;viewComment(&#039;${c.id}&#039;)&quot; title=&quot;عرض&quot;&gt;&lt;i class=&quot;fas fa-eye&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                                ${c.status !== &#039;approved&#039; ? `&lt;button class=&quot;approve&quot; onclick=&quot;approveComment(&#039;${c.id}&#039;)&quot; title=&quot;موافقة&quot;&gt;&lt;i class=&quot;fas fa-check&quot;&gt;&lt;/i&gt;&lt;/button&gt;` : &#039;&#039;}
-                                ${c.status !== &#039;rejected&#039; ? `&lt;button class=&quot;reject&quot; onclick=&quot;rejectComment(&#039;${c.id}&#039;)&quot; title=&quot;رفض&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;` : &#039;&#039;}
-                                &lt;button class=&quot;delete&quot; onclick=&quot;deleteComment(&#039;${c.id}&#039;)&quot; title=&quot;حذف&quot;&gt;&lt;i class=&quot;fas fa-trash&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                            &lt;/div&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
+                    <tr>
+                        <td>${c.name || c.username || c.userFullName || 'مستخدم'}</td>
+                        <td><span class="stars">${stars}</span></td>
+                        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${c.comment || '—'}</td>
+                        <td><span class="status ${status.class}">${status.label}</span></td>
+                        <td>${date}</td>
+                        <td>
+                            <div class="actions">
+                                <button onclick="viewComment('${c.id}')" title="عرض"><i class="fas fa-eye"></i></button>
+                                ${c.status !== 'approved' ? `<button class="approve" onclick="approveComment('${c.id}')" title="موافقة"><i class="fas fa-check"></i></button>` : ''}
+                                ${c.status !== 'rejected' ? `<button class="reject" onclick="rejectComment('${c.id}')" title="رفض"><i class="fas fa-times"></i></button>` : ''}
+                                <button class="delete" onclick="deleteComment('${c.id}')" title="حذف"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
                 `;
-            }).join(&#039;&#039;);
+            }).join('');
         }
 
         function filterComments() {
-            const filter = document.getElementById(&#039;commentFilter&#039;).value;
-            if (filter === &#039;all&#039;) {
+            const filter = document.getElementById('commentFilter').value;
+            if (filter === 'all') {
                 renderComments(allComments);
             } else {
-                const filtered = allComments.filter(c =&gt; c.status === filter);
+                const filtered = allComments.filter(c => c.status === filter);
                 renderComments(filtered);
             }
         }
 
         // ===== إجراءات التعليقات =====
         async function approveComment(id) {
-            const data = await fetchAPI(`/comment/approve?adminPassword=${ADMIN_PASSWORD}&amp;commentId=${id}`);
-            if (data &amp;&amp; data.status) {
-                showToast(&#039;✅ تم الموافقة على التعليق بنجاح&#039;, &#039;success&#039;);
+            const data = await fetchAPI(`/comment/approve?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم الموافقة على التعليق بنجاح', 'success');
                 loadComments();
                 loadStats();
             } else {
-                const comment = allComments.find(c =&gt; c.id === id);
+                const comment = allComments.find(c => c.id === id);
                 if (comment) {
-                    comment.status = &#039;approved&#039;;
+                    comment.status = 'approved';
                     renderComments(allComments);
-                    showToast(&#039;✅ تم الموافقة على التعليق بنجاح (محلياً)&#039;, &#039;success&#039;);
+                    showToast('✅ تم الموافقة على التعليق بنجاح (محلياً)', 'success');
                 }
             }
         }
 
         async function rejectComment(id) {
-            const data = await fetchAPI(`/comment/reject?adminPassword=${ADMIN_PASSWORD}&amp;commentId=${id}`);
-            if (data &amp;&amp; data.status) {
-                showToast(&#039;✅ تم رفض التعليق&#039;, &#039;success&#039;);
+            const data = await fetchAPI(`/comment/reject?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم رفض التعليق', 'success');
                 loadComments();
                 loadStats();
             } else {
-                const comment = allComments.find(c =&gt; c.id === id);
+                const comment = allComments.find(c => c.id === id);
                 if (comment) {
-                    comment.status = &#039;rejected&#039;;
+                    comment.status = 'rejected';
                     renderComments(allComments);
-                    showToast(&#039;✅ تم رفض التعليق (محلياً)&#039;, &#039;success&#039;);
+                    showToast('✅ تم رفض التعليق (محلياً)', 'success');
                 }
             }
         }
 
         async function deleteComment(id) {
-            if (!confirm(&#039;هل أنت متأكد من حذف هذا التعليق؟&#039;)) return;
-            const data = await fetchAPI(`/comment/delete?adminPassword=${ADMIN_PASSWORD}&amp;commentId=${id}`);
-            if (data &amp;&amp; data.status) {
-                showToast(&#039;✅ تم حذف التعليق بنجاح&#039;, &#039;success&#039;);
+            if (!confirm('هل أنت متأكد من حذف هذا التعليق؟')) return;
+            const data = await fetchAPI(`/comment/delete?adminPassword=${ADMIN_PASSWORD}&commentId=${id}`);
+            if (data && data.status) {
+                showToast('✅ تم حذف التعليق بنجاح', 'success');
                 loadComments();
                 loadStats();
             } else {
-                allComments = allComments.filter(c =&gt; c.id !== id);
+                allComments = allComments.filter(c => c.id !== id);
                 renderComments(allComments);
-                showToast(&#039;✅ تم حذف التعليق بنجاح (محلياً)&#039;, &#039;success&#039;);
+                showToast('✅ تم حذف التعليق بنجاح (محلياً)', 'success');
             }
         }
 
         function viewComment(id) {
-            const comment = allComments.find(c =&gt; c.id === id);
+            const comment = allComments.find(c => c.id === id);
             if (!comment) return;
-            const stars = &#039;⭐&#039;.repeat(comment.rating) + &#039;☆&#039;.repeat(5 - (comment.rating || 0));
-            document.getElementById(&#039;detailsContent&#039;).innerHTML = `
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;المستخدم:&lt;/strong&gt; ${comment.name || comment.username || comment.userFullName || &#039;مستخدم&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;التقييم:&lt;/strong&gt; &lt;span class=&quot;stars&quot;&gt;${stars}&lt;/span&gt;&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;التعليق:&lt;/strong&gt; ${comment.comment || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;الحالة:&lt;/strong&gt; ${comment.status === &#039;approved&#039; ? &#039;مقبول&#039; : comment.status === &#039;rejected&#039; ? &#039;مرفوض&#039; : &#039;قيد المراجعة&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;التاريخ:&lt;/strong&gt; ${comment.createdAt ? new Date(comment.createdAt).toLocaleDateString(&#039;ar-EG&#039;) : &#039;&mdash;&#039;}&lt;/div&gt;
+            const stars = '⭐'.repeat(comment.rating) + '☆'.repeat(5 - (comment.rating || 0));
+            document.getElementById('detailsContent').innerHTML = `
+                <div style="margin-bottom:12px;"><strong>المستخدم:</strong> ${comment.name || comment.username || comment.userFullName || 'مستخدم'}</div>
+                <div style="margin-bottom:12px;"><strong>التقييم:</strong> <span class="stars">${stars}</span></div>
+                <div style="margin-bottom:12px;"><strong>التعليق:</strong> ${comment.comment || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الحالة:</strong> ${comment.status === 'approved' ? 'مقبول' : comment.status === 'rejected' ? 'مرفوض' : 'قيد المراجعة'}</div>
+                <div style="margin-bottom:12px;"><strong>التاريخ:</strong> ${comment.createdAt ? new Date(comment.createdAt).toLocaleDateString('ar-EG') : '—'}</div>
             `;
-            document.getElementById(&#039;detailsModal&#039;).classList.add(&#039;open&#039;);
+            document.getElementById('detailsModal').classList.add('open');
         }
 
         // ===== تحميل الطلبات =====
         async function loadBookings() {
-            const tbody = document.getElementById(&#039;bookingsTableBody&#039;);
-            const data = await fetchAPI(&#039;/all-bookings&#039;);
+            const tbody = document.getElementById('bookingsTableBody');
+            const data = await fetchAPI('/all-bookings');
 
-            if (data &amp;&amp; data.status &amp;&amp; data.bookings) {
+            if (data && data.status && data.bookings) {
                 allBookings = data.bookings;
             } else {
                 allBookings = [
-                    { id: &#039;b1&#039;, name: &#039;أحمد العتيبي&#039;, phone: &#039;0555123456&#039;, sessionType: &#039;اعراس&#039;, date: &#039;2025-07-15&#039;, location: &#039;الرياض&#039;, status: &#039;pending&#039;, photographer: null, createdAt: new Date().toISOString() },
-                    { id: &#039;b2&#039;, name: &#039;نورة الفايز&#039;, phone: &#039;0556789012&#039;, sessionType: &#039;بورتريه&#039;, date: &#039;2025-07-20&#039;, location: &#039;جدة&#039;, status: &#039;accepted&#039;, photographer: &#039;غزل&#039;, createdAt: new Date(Date.now() - 86400000).toISOString() },
-                    { id: &#039;b3&#039;, name: &#039;خالد المنصور&#039;, phone: &#039;0553456789&#039;, sessionType: &#039;طبيعة&#039;, date: &#039;2025-07-25&#039;, location: &#039;الطائف&#039;, status: &#039;completed&#039;, photographer: &#039;غزل&#039;, createdAt: new Date(Date.now() - 172800000).toISOString() },
-                    { id: &#039;b4&#039;, name: &#039;سارة الخالد&#039;, phone: &#039;0559012345&#039;, sessionType: &#039;جلسات&#039;, date: &#039;2025-08-01&#039;, location: &#039;الدمام&#039;, status: &#039;pending&#039;, photographer: null, createdAt: new Date(Date.now() - 259200000).toISOString() }
+                    { id: 'b1', name: 'أحمد العتيبي', phone: '0555123456', sessionType: 'اعراس', date: '2025-07-15', location: 'الرياض', status: 'pending', photographer: null, createdAt: new Date().toISOString() },
+                    { id: 'b2', name: 'نورة الفايز', phone: '0556789012', sessionType: 'بورتريه', date: '2025-07-20', location: 'جدة', status: 'accepted', photographer: 'غزل', createdAt: new Date(Date.now() - 86400000).toISOString() },
+                    { id: 'b3', name: 'خالد المنصور', phone: '0553456789', sessionType: 'طبيعة', date: '2025-07-25', location: 'الطائف', status: 'completed', photographer: 'غزل', createdAt: new Date(Date.now() - 172800000).toISOString() },
+                    { id: 'b4', name: 'سارة الخالد', phone: '0559012345', sessionType: 'جلسات', date: '2025-08-01', location: 'الدمام', status: 'pending', photographer: null, createdAt: new Date(Date.now() - 259200000).toISOString() }
                 ];
             }
 
-            document.getElementById(&#039;bookingsBadge&#039;).textContent = allBookings.filter(b =&gt; b.status === &#039;pending&#039;).length;
+            document.getElementById('bookingsBadge').textContent = allBookings.filter(b => b.status === 'pending').length;
             renderBookings(allBookings);
             renderRecentBookings(allBookings.slice(0, 5));
         }
 
         function renderBookings(bookings) {
-            const tbody = document.getElementById(&#039;bookingsTableBody&#039;);
+            const tbody = document.getElementById('bookingsTableBody');
             if (!bookings || bookings.length === 0) {
-                tbody.innerHTML = `&lt;tr&gt;&lt;td colspan=&quot;8&quot;&gt;&lt;div class=&quot;empty-state&quot;&gt;&lt;i class=&quot;fas fa-calendar&quot;&gt;&lt;/i&gt; لا توجد طلبات&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;`;
+                tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات</div></td></tr>`;
                 return;
             }
 
             const statusMap = {
-                &#039;pending&#039;: { label: &#039;معلق&#039;, class: &#039;pending&#039; },
-                &#039;accepted&#039;: { label: &#039;مقبول&#039;, class: &#039;accepted&#039; },
-                &#039;completed&#039;: { label: &#039;مكتمل&#039;, class: &#039;completed&#039; },
-                &#039;cancelled&#039;: { label: &#039;ملغي&#039;, class: &#039;cancelled&#039; }
+                'pending': { label: 'معلق', class: 'pending' },
+                'accepted': { label: 'مقبول', class: 'accepted' },
+                'completed': { label: 'مكتمل', class: 'completed' },
+                'cancelled': { label: 'ملغي', class: 'cancelled' }
             };
 
-            tbody.innerHTML = bookings.map(b =&gt; {
-                const status = statusMap[b.status] || statusMap[&#039;pending&#039;];
-                const date = b.date || &#039;&mdash;&#039;;
+            tbody.innerHTML = bookings.map(b => {
+                const status = statusMap[b.status] || statusMap['pending'];
+                const date = b.date || '—';
                 return `
-                    &lt;tr&gt;
-                        &lt;td&gt;${b.name || b.username || b.userFullName || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;${b.phone || b.userPhone || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;${b.sessionType || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;${date}&lt;/td&gt;
-                        &lt;td&gt;${b.location || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;&lt;span class=&quot;status ${status.class}&quot;&gt;${status.label}&lt;/span&gt;&lt;/td&gt;
-                        &lt;td&gt;${b.photographer || &#039;&mdash;&#039;}&lt;/td&gt;
-                        &lt;td&gt;
-                            &lt;div class=&quot;actions&quot;&gt;
-                                &lt;button onclick=&quot;viewBooking(&#039;${b.id}&#039;)&quot; title=&quot;عرض&quot;&gt;&lt;i class=&quot;fas fa-eye&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                                ${b.status === &#039;pending&#039; ? `&lt;button class=&quot;accept&quot; onclick=&quot;acceptBooking(&#039;${b.id}&#039;)&quot; title=&quot;قبول&quot;&gt;&lt;i class=&quot;fas fa-check&quot;&gt;&lt;/i&gt;&lt;/button&gt;` : &#039;&#039;}
-                                ${b.status === &#039;accepted&#039; ? `&lt;button class=&quot;complete&quot; onclick=&quot;completeBooking(&#039;${b.id}&#039;)&quot; title=&quot;إكمال&quot;&gt;&lt;i class=&quot;fas fa-check-double&quot;&gt;&lt;/i&gt;&lt;/button&gt;` : &#039;&#039;}
-                                &lt;button class=&quot;delete&quot; onclick=&quot;deleteBooking(&#039;${b.id}&#039;)&quot; title=&quot;حذف&quot;&gt;&lt;i class=&quot;fas fa-trash&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                            &lt;/div&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
+                    <tr>
+                        <td>${b.name || b.username || b.userFullName || '—'}</td>
+                        <td>${b.phone || b.userPhone || '—'}</td>
+                        <td>${b.sessionType || '—'}</td>
+                        <td>${date}</td>
+                        <td>${b.location || '—'}</td>
+                        <td><span class="status ${status.class}">${status.label}</span></td>
+                        <td>${b.photographer || '—'}</td>
+                        <td>
+                            <div class="actions">
+                                <button onclick="viewBooking('${b.id}')" title="عرض"><i class="fas fa-eye"></i></button>
+                                ${b.status === 'pending' ? `<button class="accept" onclick="acceptBooking('${b.id}')" title="قبول"><i class="fas fa-check"></i></button>` : ''}
+                                ${b.status === 'accepted' ? `<button class="complete" onclick="completeBooking('${b.id}')" title="إكمال"><i class="fas fa-check-double"></i></button>` : ''}
+                                <button class="delete" onclick="deleteBooking('${b.id}')" title="حذف"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
                 `;
-            }).join(&#039;&#039;);
+            }).join('');
         }
 
         function renderRecentBookings(bookings) {
-            const container = document.getElementById(&#039;recentBookings&#039;);
+            const container = document.getElementById('recentBookings');
             if (!bookings || bookings.length === 0) {
-                container.innerHTML = `&lt;div class=&quot;empty-state&quot;&gt;&lt;i class=&quot;fas fa-calendar&quot;&gt;&lt;/i&gt; لا توجد طلبات حديثة&lt;/div&gt;`;
+                container.innerHTML = `<div class="empty-state"><i class="fas fa-calendar"></i> لا توجد طلبات حديثة</div>`;
                 return;
             }
 
             const statusMap = {
-                &#039;pending&#039;: { label: &#039;معلق&#039;, class: &#039;pending&#039; },
-                &#039;accepted&#039;: { label: &#039;مقبول&#039;, class: &#039;accepted&#039; },
-                &#039;completed&#039;: { label: &#039;مكتمل&#039;, class: &#039;completed&#039; },
-                &#039;cancelled&#039;: { label: &#039;ملغي&#039;, class: &#039;cancelled&#039; }
+                'pending': { label: 'معلق', class: 'pending' },
+                'accepted': { label: 'مقبول', class: 'accepted' },
+                'completed': { label: 'مكتمل', class: 'completed' },
+                'cancelled': { label: 'ملغي', class: 'cancelled' }
             };
 
-            container.innerHTML = bookings.map(b =&gt; {
-                const status = statusMap[b.status] || statusMap[&#039;pending&#039;];
+            container.innerHTML = bookings.map(b => {
+                const status = statusMap[b.status] || statusMap['pending'];
                 return `
-                    &lt;div style=&quot;display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);&quot;&gt;
-                        &lt;div&gt;
-                            &lt;div style=&quot;font-weight:600;&quot;&gt;${b.name || b.username || b.userFullName || &#039;&mdash;&#039;}&lt;/div&gt;
-                            &lt;div style=&quot;font-size:0.75rem;color:var(--text-secondary);&quot;&gt;${b.sessionType || &#039;&mdash;&#039;} &bull; ${b.date || &#039;&mdash;&#039;}&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div style=&quot;display:flex;align-items:center;gap:12px;&quot;&gt;
-                            &lt;span class=&quot;status ${status.class}&quot;&gt;${status.label}&lt;/span&gt;
-                            &lt;button onclick=&quot;showSection(&#039;bookings&#039;)&quot; style=&quot;background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.8rem;&quot;&gt;&lt;i class=&quot;fas fa-arrow-left&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
+                        <div>
+                            <div style="font-weight:600;">${b.name || b.username || b.userFullName || '—'}</div>
+                            <div style="font-size:0.75rem;color:var(--text-secondary);">${b.sessionType || '—'} • ${b.date || '—'}</div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span class="status ${status.class}">${status.label}</span>
+                            <button onclick="showSection('bookings')" style="background:none;border:none;color:var(--primary-light);cursor:pointer;font-size:0.8rem;"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
                 `;
-            }).join(&#039;&#039;);
+            }).join('');
         }
 
         function filterBookings() {
-            const filter = document.getElementById(&#039;bookingFilter&#039;).value;
-            const search = document.getElementById(&#039;bookingSearch&#039;).value.toLowerCase();
+            const filter = document.getElementById('bookingFilter').value;
+            const search = document.getElementById('bookingSearch').value.toLowerCase();
             let filtered = allBookings;
-            if (filter !== &#039;all&#039;) {
-                filtered = filtered.filter(b =&gt; b.status === filter);
+            if (filter !== 'all') {
+                filtered = filtered.filter(b => b.status === filter);
             }
             if (search) {
-                filtered = filtered.filter(b =&gt;
-                    (b.name || &#039;&#039;).toLowerCase().includes(search) ||
-                    (b.username || &#039;&#039;).toLowerCase().includes(search) ||
-                    (b.phone || &#039;&#039;).includes(search) ||
-                    (b.sessionType || &#039;&#039;).toLowerCase().includes(search) ||
-                    (b.location || &#039;&#039;).toLowerCase().includes(search)
+                filtered = filtered.filter(b =>
+                    (b.name || '').toLowerCase().includes(search) ||
+                    (b.username || '').toLowerCase().includes(search) ||
+                    (b.phone || '').includes(search) ||
+                    (b.sessionType || '').toLowerCase().includes(search) ||
+                    (b.location || '').toLowerCase().includes(search)
                 );
             }
             renderBookings(filtered);
@@ -1462,102 +1462,102 @@
 
         // ===== إجراءات الطلبات =====
         async function acceptBooking(id) {
-            const booking = allBookings.find(b =&gt; b.id === id);
+            const booking = allBookings.find(b => b.id === id);
             if (!booking) return;
-            const photographer = prompt(&#039;أدخل اسم المصور:&#039;, &#039;غزل&#039;);
+            const photographer = prompt('أدخل اسم المصور:', 'غزل');
             if (!photographer) return;
 
-            const data = await fetchAPI(`/booking/accept?adminPassword=${ADMIN_PASSWORD}&amp;bookingId=${id}&amp;photographer=${encodeURIComponent(photographer)}`);
-            if (data &amp;&amp; data.status) {
-                booking.status = &#039;accepted&#039;;
+            const data = await fetchAPI(`/booking/accept?adminPassword=${ADMIN_PASSWORD}&bookingId=${id}&photographer=${encodeURIComponent(photographer)}`);
+            if (data && data.status) {
+                booking.status = 'accepted';
                 booking.photographer = photographer;
                 renderBookings(allBookings);
                 loadStats();
-                showToast(&#039;✅ تم قبول الطلب بنجاح&#039;, &#039;success&#039;);
+                showToast('✅ تم قبول الطلب بنجاح', 'success');
             } else {
-                booking.status = &#039;accepted&#039;;
+                booking.status = 'accepted';
                 booking.photographer = photographer;
                 renderBookings(allBookings);
-                showToast(&#039;✅ تم قبول الطلب بنجاح (محلياً)&#039;, &#039;success&#039;);
+                showToast('✅ تم قبول الطلب بنجاح (محلياً)', 'success');
             }
         }
 
         async function completeBooking(id) {
-            const booking = allBookings.find(b =&gt; b.id === id);
+            const booking = allBookings.find(b => b.id === id);
             if (!booking) return;
-            if (!confirm(&#039;هل أنت متأكد من إكمال هذا الطلب؟&#039;)) return;
+            if (!confirm('هل أنت متأكد من إكمال هذا الطلب؟')) return;
 
-            const data = await fetchAPI(`/booking/complete?adminPassword=${ADMIN_PASSWORD}&amp;bookingId=${id}`);
-            if (data &amp;&amp; data.status) {
-                booking.status = &#039;completed&#039;;
+            const data = await fetchAPI(`/booking/complete?adminPassword=${ADMIN_PASSWORD}&bookingId=${id}`);
+            if (data && data.status) {
+                booking.status = 'completed';
                 renderBookings(allBookings);
                 loadStats();
-                showToast(&#039;✅ تم إكمال الطلب بنجاح&#039;, &#039;success&#039;);
+                showToast('✅ تم إكمال الطلب بنجاح', 'success');
             } else {
-                booking.status = &#039;completed&#039;;
+                booking.status = 'completed';
                 renderBookings(allBookings);
-                showToast(&#039;✅ تم إكمال الطلب بنجاح (محلياً)&#039;, &#039;success&#039;);
+                showToast('✅ تم إكمال الطلب بنجاح (محلياً)', 'success');
             }
         }
 
         function deleteBooking(id) {
-            if (!confirm(&#039;هل أنت متأكد من حذف هذا الطلب؟&#039;)) return;
-            allBookings = allBookings.filter(b =&gt; b.id !== id);
+            if (!confirm('هل أنت متأكد من حذف هذا الطلب؟')) return;
+            allBookings = allBookings.filter(b => b.id !== id);
             renderBookings(allBookings);
             loadStats();
-            showToast(&#039;✅ تم حذف الطلب بنجاح&#039;, &#039;success&#039;);
+            showToast('✅ تم حذف الطلب بنجاح', 'success');
         }
 
         function viewBooking(id) {
-            const booking = allBookings.find(b =&gt; b.id === id);
+            const booking = allBookings.find(b => b.id === id);
             if (!booking) return;
-            document.getElementById(&#039;detailsContent&#039;).innerHTML = `
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;العميل:&lt;/strong&gt; ${booking.name || booking.username || booking.userFullName || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;الهاتف:&lt;/strong&gt; ${booking.phone || booking.userPhone || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;نوع الخدمة:&lt;/strong&gt; ${booking.sessionType || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;التاريخ:&lt;/strong&gt; ${booking.date || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;الموقع:&lt;/strong&gt; ${booking.location || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;الحالة:&lt;/strong&gt; ${booking.status === &#039;pending&#039; ? &#039;معلق&#039; : booking.status === &#039;accepted&#039; ? &#039;مقبول&#039; : booking.status === &#039;completed&#039; ? &#039;مكتمل&#039; : &#039;ملغي&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;المصور:&lt;/strong&gt; ${booking.photographer || &#039;&mdash;&#039;}&lt;/div&gt;
-                &lt;div style=&quot;margin-bottom:12px;&quot;&gt;&lt;strong&gt;التفاصيل:&lt;/strong&gt; ${booking.details || &#039;لا توجد تفاصيل&#039;}&lt;/div&gt;
+            document.getElementById('detailsContent').innerHTML = `
+                <div style="margin-bottom:12px;"><strong>العميل:</strong> ${booking.name || booking.username || booking.userFullName || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الهاتف:</strong> ${booking.phone || booking.userPhone || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>نوع الخدمة:</strong> ${booking.sessionType || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>التاريخ:</strong> ${booking.date || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الموقع:</strong> ${booking.location || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>الحالة:</strong> ${booking.status === 'pending' ? 'معلق' : booking.status === 'accepted' ? 'مقبول' : booking.status === 'completed' ? 'مكتمل' : 'ملغي'}</div>
+                <div style="margin-bottom:12px;"><strong>المصور:</strong> ${booking.photographer || '—'}</div>
+                <div style="margin-bottom:12px;"><strong>التفاصيل:</strong> ${booking.details || 'لا توجد تفاصيل'}</div>
             `;
-            document.getElementById(&#039;detailsModal&#039;).classList.add(&#039;open&#039;);
+            document.getElementById('detailsModal').classList.add('open');
         }
 
         // ===== مودال =====
         function closeModal(id) {
-            document.getElementById(id).classList.remove(&#039;open&#039;);
+            document.getElementById(id).classList.remove('open');
         }
 
-        document.querySelectorAll(&#039;.modal-overlay&#039;).forEach(m =&gt; {
-            m.addEventListener(&#039;click&#039;, function(e) {
-                if (e.target === this) this.classList.remove(&#039;open&#039;);
+        document.querySelectorAll('.modal-overlay').forEach(m => {
+            m.addEventListener('click', function(e) {
+                if (e.target === this) this.classList.remove('open');
             });
         });
 
         // ===== رسائل =====
-        function showToast(message, type = &#039;success&#039;) {
-            const toast = document.getElementById(&#039;toast&#039;);
-            const msg = document.getElementById(&#039;toastMessage&#039;);
-            toast.className = &#039;toast show &#039; + type;
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msg = document.getElementById('toastMessage');
+            toast.className = 'toast show ' + type;
             msg.innerHTML = message;
             clearTimeout(toast._timeout);
-            toast._timeout = setTimeout(() =&gt; { toast.classList.remove(&#039;show&#039;); }, 4000);
+            toast._timeout = setTimeout(() => { toast.classList.remove('show'); }, 4000);
         }
 
         function hideToast() {
-            document.getElementById(&#039;toast&#039;).classList.remove(&#039;show&#039;);
+            document.getElementById('toast').classList.remove('show');
         }
 
         // ===== تحديث البيانات =====
         async function refreshData() {
-            showToast(&#039;🔄 جاري تحديث البيانات...&#039;, &#039;success&#039;);
+            showToast('🔄 جاري تحديث البيانات...', 'success');
             await loadAllData();
-            showToast(&#039;✅ تم تحديث البيانات بنجاح&#039;, &#039;success&#039;);
+            showToast('✅ تم تحديث البيانات بنجاح', 'success');
         }
 
         // ===== تحميل أولي (يتم بعد تسجيل الدخول) =====
         // تم نقله إلى handleLogin
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    </script>
+</body>
+</html>
