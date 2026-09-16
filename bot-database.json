@@ -1,9 +1,21 @@
 {
-  "accounts": [],
+  "accounts": [
+    {
+      "id": "aad2c3fe-3574-44d7-8335-b1c671fe0310",
+      "username": "ali",
+      "password": "1234",
+      "phone": "963999888777",
+      "fullName": "ali",
+      "year": null,
+      "major": null,
+      "createdAt": "2026-09-16T20:40:58.920Z",
+      "verified": false
+    }
+  ],
   "codes": [],
   "sessions": [],
   "stats": {
-    "total_accounts": 0,
+    "total_accounts": 1,
     "total_codes": 0
   }
 }
