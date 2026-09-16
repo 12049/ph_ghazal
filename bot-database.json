@@ -20,23 +20,20 @@
       "year": null,
       "major": null,
       "createdAt": "2026-09-16T20:48:58.643Z",
-      "verified": false
+      "verified": true,
+      "tg_chat_id": 6619841429,
+      "tg_username": "Mouhmmed99"
     }
   ],
   "codes": [
-    {
-      "username": "ali",
-      "phone": "963999888777",
-      "code": "974430",
-      "createdAt": 1789591470212,
-      "consumed": false
-    },
     {
       "username": "عمر",
       "phone": "963952198305",
       "code": "121678",
       "createdAt": 1789591751280,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789591776474,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
