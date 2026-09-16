@@ -12,10 +12,18 @@
       "verified": false
     }
   ],
-  "codes": [],
+  "codes": [
+    {
+      "username": "ali",
+      "phone": "963999888777",
+      "code": "974430",
+      "createdAt": 1789591470212,
+      "consumed": false
+    }
+  ],
   "sessions": [],
   "stats": {
     "total_accounts": 1,
-    "total_codes": 0
+    "total_codes": 1
   }
 }
