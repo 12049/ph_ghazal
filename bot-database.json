@@ -40,18 +40,16 @@
   ],
   "codes": [
     {
-      "username": "محمد",
-      "phone": "963932811613",
-      "code": "757811",
-      "createdAt": 1789592667707,
-      "consumed": true,
-      "consumedAt": 1789592806958,
-      "chat_id": 8386491282
+      "username": "عمر",
+      "phone": "963952198305",
+      "code": "252655",
+      "createdAt": 1789593298431,
+      "consumed": false
     }
   ],
   "sessions": [],
   "stats": {
     "total_accounts": 3,
-    "total_codes": 5
+    "total_codes": 6
   }
 }
