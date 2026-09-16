@@ -10,6 +10,17 @@
       "major": null,
       "createdAt": "2026-09-16T20:40:58.920Z",
       "verified": false
+    },
+    {
+      "id": "4bef175b-37be-42db-b672-db22264f1eba",
+      "username": "عمر",
+      "password": "ppppp",
+      "phone": "963952198305",
+      "fullName": "عمر",
+      "year": null,
+      "major": null,
+      "createdAt": "2026-09-16T20:48:58.643Z",
+      "verified": false
     }
   ],
   "codes": [
@@ -23,7 +34,7 @@
   ],
   "sessions": [],
   "stats": {
-    "total_accounts": 1,
+    "total_accounts": 2,
     "total_codes": 1
   }
 }
