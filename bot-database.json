@@ -44,7 +44,9 @@
       "phone": "963952198305",
       "code": "252655",
       "createdAt": 1789593298431,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789593328253,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
