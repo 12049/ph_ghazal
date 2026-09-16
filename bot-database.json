@@ -30,11 +30,18 @@
       "code": "974430",
       "createdAt": 1789591470212,
       "consumed": false
+    },
+    {
+      "username": "عمر",
+      "phone": "963952198305",
+      "code": "121678",
+      "createdAt": 1789591751280,
+      "consumed": false
     }
   ],
   "sessions": [],
   "stats": {
     "total_accounts": 2,
-    "total_codes": 1
+    "total_codes": 2
   }
 }
