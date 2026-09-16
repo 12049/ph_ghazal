@@ -33,7 +33,9 @@
       "year": null,
       "major": null,
       "createdAt": "2026-09-16T21:04:15.347Z",
-      "verified": false
+      "verified": true,
+      "tg_chat_id": 8386491282,
+      "tg_username": "rama_99o"
     }
   ],
   "codes": [
@@ -42,7 +44,9 @@
       "phone": "963932811613",
       "code": "757811",
       "createdAt": 1789592667707,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789592806958,
+      "chat_id": 8386491282
     }
   ],
   "sessions": [],
