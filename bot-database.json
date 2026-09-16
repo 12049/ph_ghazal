@@ -23,6 +23,17 @@
       "verified": true,
       "tg_chat_id": 6619841429,
       "tg_username": "Mouhmmed99"
+    },
+    {
+      "id": "06e51659-7f15-4ca4-ab07-c7989ad82f35",
+      "username": "محمد",
+      "password": "gggggggg",
+      "phone": "963932811613",
+      "fullName": "محمد",
+      "year": null,
+      "major": null,
+      "createdAt": "2026-09-16T21:04:15.347Z",
+      "verified": false
     }
   ],
   "codes": [
@@ -36,7 +47,7 @@
   ],
   "sessions": [],
   "stats": {
-    "total_accounts": 2,
+    "total_accounts": 3,
     "total_codes": 4
   }
 }
