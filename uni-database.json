@@ -11,21 +11,11 @@
       "createdAt": "2026-09-18T22:04:23.604Z",
       "verified": true,
       "tg_chat_id": 6619841429,
-      "tg_username": "Mouhmmed99"
+      "tg_username": "Mouhmmed99",
+      "lastLogin": "2026-09-18T22:18:55.090Z"
     }
   ],
-  "codes": [
-    {
-      "username": "784206",
-      "phone": "963952198305",
-      "code": "266115",
-      "type": "login",
-      "createdAt": 1789769901265,
-      "consumed": true,
-      "consumedAt": 1789769921652,
-      "chat_id": 6619841429
-    }
-  ],
+  "codes": [],
   "sessions": [],
   "stats": {
     "total_accounts": 1,
