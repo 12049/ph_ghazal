@@ -23,7 +23,9 @@
       "code": "871713",
       "type": "recover",
       "createdAt": 1789770687604,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789770699678,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
