@@ -23,7 +23,9 @@
       "code": "440322",
       "type": "recover",
       "createdAt": 1789771041636,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789771053183,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
