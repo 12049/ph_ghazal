@@ -1,9 +1,21 @@
 {
-  "accounts": [],
+  "accounts": [
+    {
+      "id": "309b33f6-e253-46e4-9bb7-d16fd0aa0915",
+      "username": "784206",
+      "password": "00000000",
+      "phone": "963952198305",
+      "email": "mouhmmedhasson@gmail.com",
+      "universityId": "784206",
+      "fullName": "محمد كامل حسون",
+      "createdAt": "2026-09-18T22:04:23.604Z",
+      "verified": false
+    }
+  ],
   "codes": [],
   "sessions": [],
   "stats": {
-    "total_accounts": 0,
+    "total_accounts": 1,
     "total_codes": 0
   }
 }
