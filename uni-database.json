@@ -15,10 +15,19 @@
       "lastLogin": "2026-09-18T22:18:55.090Z"
     }
   ],
-  "codes": [],
+  "codes": [
+    {
+      "username": "784206",
+      "phone": "963952198305",
+      "code": "151992",
+      "type": "recover",
+      "createdAt": 1789770270844,
+      "consumed": false
+    }
+  ],
   "sessions": [],
   "stats": {
     "total_accounts": 1,
-    "total_codes": 2
+    "total_codes": 3
   }
 }
