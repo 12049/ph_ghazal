@@ -23,7 +23,9 @@
       "code": "386100",
       "type": "login",
       "createdAt": 1789770315248,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789770330561,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
