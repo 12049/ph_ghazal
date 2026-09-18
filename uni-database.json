@@ -22,7 +22,9 @@
       "code": "151992",
       "type": "recover",
       "createdAt": 1789770270844,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789770288707,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
