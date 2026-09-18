@@ -9,7 +9,9 @@
       "universityId": "784206",
       "fullName": "محمد كامل حسون",
       "createdAt": "2026-09-18T22:04:23.604Z",
-      "verified": false
+      "verified": true,
+      "tg_chat_id": 6619841429,
+      "tg_username": "Mouhmmed99"
     }
   ],
   "codes": [
@@ -19,7 +21,9 @@
       "code": "266115",
       "type": "login",
       "createdAt": 1789769901265,
-      "consumed": false
+      "consumed": true,
+      "consumedAt": 1789769921652,
+      "chat_id": 6619841429
     }
   ],
   "sessions": [],
