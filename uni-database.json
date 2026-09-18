@@ -3,7 +3,7 @@
     {
       "id": "309b33f6-e253-46e4-9bb7-d16fd0aa0915",
       "username": "784206",
-      "password": "00000000",
+      "password": "pppppp",
       "phone": "963952198305",
       "email": "mouhmmedhasson@gmail.com",
       "universityId": "784206",
@@ -13,21 +13,10 @@
       "tg_chat_id": 6619841429,
       "tg_username": "Mouhmmed99",
       "lastLogin": "2026-09-18T22:32:24.450Z",
-      "updatedAt": "2026-09-18T22:31:55.602Z"
+      "updatedAt": "2026-09-18T22:37:47.644Z"
     }
   ],
-  "codes": [
-    {
-      "username": "784206",
-      "phone": "963952198305",
-      "code": "440322",
-      "type": "recover",
-      "createdAt": 1789771041636,
-      "consumed": true,
-      "consumedAt": 1789771053183,
-      "chat_id": 6619841429
-    }
-  ],
+  "codes": [],
   "sessions": [],
   "stats": {
     "total_accounts": 1,
