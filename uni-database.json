@@ -13,21 +13,10 @@
       "tg_chat_id": 6619841429,
       "tg_username": "Mouhmmed99",
       "lastLogin": "2026-09-18T22:25:36.437Z",
-      "updatedAt": "2026-09-18T22:25:06.935Z"
+      "updatedAt": "2026-09-18T22:31:55.602Z"
     }
   ],
-  "codes": [
-    {
-      "username": "784206",
-      "phone": "963952198305",
-      "code": "871713",
-      "type": "recover",
-      "createdAt": 1789770687604,
-      "consumed": true,
-      "consumedAt": 1789770699678,
-      "chat_id": 6619841429
-    }
-  ],
+  "codes": [],
   "sessions": [],
   "stats": {
     "total_accounts": 1,
